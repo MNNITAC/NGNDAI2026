@@ -12,15 +12,15 @@ function Publication() {
             <div className="flex flex-col md:flex-row gap-4 text-justify items-center">
                 <div className="flex flex-col gap-4">
                     <p className="">
-                        The International Conference on Next-Generation Networks and Deployable Artificial Intelligence
+                        The 2<sup>nd</sup> International Conference on Next-Generation Networks and Deployable Artificial Intelligence
                         (NGNDAI-2026) proceedings will be published as Springer book series “Lecture Notes in Networks
                         and Systems” (https://www.springer.com/series/15179) (indexed in Web of Science, SCOPUS, etc.).
-                        {/*<b> (Approved)</b>*/}
+                        <b> (Approval Pending)</b>
                     </p>
-                    <p>
-                        Selected and extended versions of research papers will be forwarded for publication as a Special
-                        Issue in Scopus and SCI/SCIE-indexed Journals of repute.
-                    </p>
+                    {/*<p>*/}
+                    {/*    Selected and extended versions of research papers will be forwarded for publication as a Special*/}
+                    {/*    Issue in Scopus and SCI/SCIE-indexed Journals of repute.*/}
+                    {/*</p>*/}
                 </div>
                 <img className="h-36" src={springerLectureNotes} alt="Springer Nature"/>
             </div>

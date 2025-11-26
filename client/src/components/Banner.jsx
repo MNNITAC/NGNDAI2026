@@ -18,7 +18,7 @@ function Banner() {
 
 
             <div className="text-3xl flex flex-col items-center max-w-4xl text-center z-1">
-                <h1 className="font-playfair font-thin">International Conference on</h1>
+                <h1 className="font-playfair font-thin">2<sup>nd</sup> International Conference on</h1>
 
                 <h1 className="font-bold text-5xl leading-[60px] rounded-lg p-4 font-playfair"> Next-Generation
                     Networks and
@@ -27,11 +27,11 @@ function Banner() {
                 <h1 className="font-playfair font-thin mb-1">(NGNDAI-2026)</h1>
             </div>
 
-            {/*<div className="m-4 flex justify-center">*/}
-            {/*    <div className="rounded-full px-3 py-1 text-lg ring-1 bg-blue-100 font-medium leading-6 text-black">*/}
-            {/*        18<sup>th</sup> -20<sup>th</sup> Sept 2026*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div className="m-4 flex justify-center">
+                <div className="rounded-full px-3 py-1 text-lg ring-1 bg-blue-100 font-medium leading-6 text-black">
+                    24<sup>th</sup> -26<sup>th</sup> Sept 2026
+                </div>
+            </div>
 
 
             <div className="flex items-center flex-col align-middle gap-8 relative *:z-20 z-30">

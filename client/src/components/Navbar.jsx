@@ -23,47 +23,43 @@ const Navbar = () => {
             name: "National Advisory Committee", link: "advisoryCommittee#National%20Advisory%20Committee"
         }, {
             name: "Technical Program Committee", link: "advisoryCommittee#Technical%20Program%20Committee"
-        },
-            // {name: "Student Committee", link: "studentCommittee"}
+        }, // {name: "Student Committee", link: "studentCommittee"}
         ]
-    },
-    //     {
-    //     name: "Conference Scope", link: "/paperSubmission", sublinks: [{
-    //         name: "Special Session", link: "/specialSession", sublinks: [{
-    //             name: "Special Track 1", element: <div onClick={() => window.open(spt1, "_blank")}
-    //                                                    className="cursor-pointer py-2 flex gap-4 justify-center items-center">
-    //                 Special Track 1 <GrDocumentPdf size={10}/>
-    //             </div>
-    //         }, {
-    //             name: "Special Track 2", element: <div onClick={() => window.open(spt2, "_blank")}
-    //                                                    className="cursor-pointer py-2 flex gap-4 justify-center items-center">
-    //                 Special Track 2 <GrDocumentPdf size={10}/>
-    //             </div>
-    //         }]
-    //     }]
-    // },
+    }, //     {
+        //     name: "Conference Scope", link: "/paperSubmission", sublinks: [{
+        //         name: "Special Session", link: "/specialSession", sublinks: [{
+        //             name: "Special Track 1", element: <div onClick={() => window.open(spt1, "_blank")}
+        //                                                    className="cursor-pointer py-2 flex gap-4 justify-center items-center">
+        //                 Special Track 1 <GrDocumentPdf size={10}/>
+        //             </div>
+        //         }, {
+        //             name: "Special Track 2", element: <div onClick={() => window.open(spt2, "_blank")}
+        //                                                    className="cursor-pointer py-2 flex gap-4 justify-center items-center">
+        //                 Special Track 2 <GrDocumentPdf size={10}/>
+        //             </div>
+        //         }]
+        //     }]
+        // },
         {
-        name: "Submission Guidelines", link: "/submissionGuidelines"
-    },
-    //     {
-    //     name: "Conference Program", link: "/schedule", sublinks: [
-    //         {name: "Timeline", link: "/schedule"},
-    //             {
-    //         name: "Keynote Speakers", link: "/schedule#Keynote"
-    //     }, {
-    //         name: "Industry Session", link: "/schedule#industrySession"
-    //     }, {
-    //         name: "Mentorship Session", link: "/MentorshipSession"
-    //     }, {name: "Accomodation", link: "accomodationPage"}, {
-    //         name: "Cultural Program", link: "culturalProgramPage"
-    //     }]
-    // },
-    //     {
-    //     name: "Registration", link: "/registration"
-    // },
+            name: "Submission Guidelines", link: "/submissionGuidelines"
+        }, //     {
+        //     name: "Conference Program", link: "/schedule", sublinks: [
+        //         {name: "Timeline", link: "/schedule"},
+        //             {
+        //         name: "Keynote Speakers", link: "/schedule#Keynote"
+        //     }, {
+        //         name: "Industry Session", link: "/schedule#industrySession"
+        //     }, {
+        //         name: "Mentorship Session", link: "/MentorshipSession"
+        //     }, {name: "Accomodation", link: "accomodationPage"}, {
+        //         name: "Cultural Program", link: "culturalProgramPage"
+        //     }]
+        // },
         {
-        name: "Contact Us", link: "#footer", prevPath: ""
-    }];
+            name: "Registration", link: "/registration"
+        }, {
+            name: "Contact Us", link: "#footer", prevPath: ""
+        }];
 
     return (<nav
         className={`sticky top-0 z-50 flex justify-center shadow-sm w-full transition-all duration-100 bg-base-200/95`}>

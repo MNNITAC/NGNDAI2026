@@ -11,7 +11,7 @@ function About() {
                 About conference </h2>
             <div className="grid w-full grid-cols-1 items-center justify-start gap-8 lg:grid-cols-[2fr_1fr]">
                 <div className="text-justify text-base font-normal *:mb-3">
-                    <p><span className="font-medium">The International Conference on Next-Generation Networks and Deployable Artificial
+                    <p><span className="font-medium">The 2<sup>nd</sup> International Conference on Next-Generation Networks and Deployable Artificial
                         Intelligence (NGNDAI-2026)</span> is a platform that brings together researchers, industry
                         experts,
                         and practitioners to explore cutting-edge developments in <span className="font-medium"> machine intelligence,

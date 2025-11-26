@@ -18,7 +18,7 @@ function RegistrationPage() {
                     <tbody>
                     <tr>
                         <td className="px-4 py-2 border font-medium">Indian Participants from Academic Institutes</td>
-                        <td className="px-4 py-2 border text-nowrap">INR 8,500 + 18% GST = INR 10,030</td>
+                        <td className="px-4 py-2 border text-nowrap">INR 9,000 + 18% GST = INR 10,620</td>
                     </tr>
                     <tr>
                         <td className="px-4 py-2 border font-medium">Indian Industry Participants</td>
@@ -30,7 +30,7 @@ function RegistrationPage() {
                     </tr>
                     <tr>
                         <td className="px-4 py-2 border font-medium">Student’s Participants</td>
-                        <td className="px-4 py-2 border">INR 6,000 + 18% GST = INR 7,080</td>
+                        <td className="px-4 py-2 border">INR 7,000 + 18% GST = INR 8,260</td>
                     </tr>
                     <tr>
                         <td className="px-4 py-2 border font-medium">Additional ticket for attending the conference
