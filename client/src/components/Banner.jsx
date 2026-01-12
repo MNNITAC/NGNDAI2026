@@ -24,7 +24,7 @@ function Banner() {
                     Networks and
                     Deployable Artificial
                     Intelligence</h1>
-                <h1 className="font-playfair font-thin mb-1">(NGNDAI 2026)</h1>
+                <h1 className="font-playfair font-thin mb-1">(NGNDAI-2026)</h1>
             </div>
 
             <div className="m-4 flex justify-center">
