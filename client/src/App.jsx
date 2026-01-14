@@ -18,6 +18,7 @@ import CulturalProgramPage from "./pages/CulturalEvent.jsx";
 import DownloadSchedulePage from "./pages/DownloadSchedulePage.jsx";
 import MentorshipSessionPage from "./pages/MentorshipSession.jsx";
 import ConferenceImagesPage from "./pages/conferenceImages.jsx";
+import { ngndai2025Routes } from "./pages/past/NGNDAI2025/Routes.jsx";
 
 function App() {
     const router = createBrowserRouter([
@@ -76,6 +77,9 @@ function App() {
                         ]
                     }
                 ],
+            },{
+                path: "/2025/*",
+                children : ngndai2025Routes,
             },
         ]);
 
