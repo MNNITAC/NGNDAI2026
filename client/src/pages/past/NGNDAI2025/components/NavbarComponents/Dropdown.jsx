@@ -3,7 +3,7 @@ import {Link, NavLink, useLocation} from "react-router-dom";
 import {GoChevronDown} from "react-icons/go";
 import {AnimatePresence, motion} from "framer-motion";
 
-function Dropdown({el, prevPath}) {
+function Dropdown({el}) {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrollInBounds, setIsScrollInBounds] = useState(true);
     const location = useLocation();  // Get current URL path
@@ -61,29 +61,21 @@ function Dropdown({el, prevPath}) {
                     className="md:absolute right-0 top-[calc(100%-5px)] min-w-52 p-2 shadow rounded-md bg-base-200"
                 >
                     {el.sublinks.map((subEl) => (
-                        <Dropdown key={el.link + subEl.link} el={subEl} prevPath={el.link}/>))}
+                        <Dropdown key={el.link + subEl.link} el={subEl}/>))}
                 </motion.ul>)}
             </AnimatePresence>
         </>) : el.link.charAt(0) === '#' ? (<a
             className="block w-full rounded-md p-2 hover:bg-base-300/20 hover:shadow-sm"
-            href={prevPath + el.link}
+            href={el.link}
             onClick={() => {
                 document.getElementById("nav-side-bar").checked = false;
             }}
         >
             {el.name}
-        </a>) : prevPath === "" ? (<NavLink
-            to={el.link}
-            className={({isActive}) => `flex items-center h-full p-2 hover:bg-base-300/20 ${underlineIfActive({isActive})}`}
-            onClick={() => {
-
-                document.getElementById("nav-side-bar").checked = false;
-            }}>
-            {el.name}
-        </NavLink>) : (<Link
+        </a>) : (<Link
             to={el.link}
             className="flex items-center h-full p-2 hover:bg-base-300/20"
-            href={prevPath + el.link}
+            href={el.link}
             onClick={() => {
 
                 document.getElementById("nav-side-bar").checked = false;
