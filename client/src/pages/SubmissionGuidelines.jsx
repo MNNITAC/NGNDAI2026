@@ -3,7 +3,7 @@ import SubmissionGuidelines from "../components/PaperSubmissionPageComponents/Su
 
 function SubmissionGuidelinesPage() {
 
-    return (<main className="flex w-full flex-col items-center justify-center align-middle max-w-[1400px]">
+    return (<main className="flex w-full flex-col items-center justify-center align-middle">
         {/*<CallForPaper/>*/}
         {/*<ConferenceTracks/>*/}
         <SubmissionGuidelines/>

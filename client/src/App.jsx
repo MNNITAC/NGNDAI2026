@@ -18,6 +18,7 @@ import CulturalProgramPage from "./pages/CulturalEvent.jsx";
 import DownloadSchedulePage from "./pages/DownloadSchedulePage.jsx";
 import MentorshipSessionPage from "./pages/MentorshipSession.jsx";
 import ConferenceImagesPage from "./pages/conferenceImages.jsx";
+import PaperSubmission from "./pages/PaperSubmission.jsx";
 import { ngndai2025Routes } from "./pages/past/NGNDAI2025/Routes.jsx";
 
 function App() {
@@ -73,6 +74,9 @@ function App() {
                             }, {
                                 path: "conferenceImages",
                                 element: <ConferenceImagesPage/>
+                            }, {
+                                path: "PaperSubmissionGuidelines",
+                                element: <PaperSubmission/>
                             }
                         ]
                     }
