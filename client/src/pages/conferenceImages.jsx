@@ -21,6 +21,56 @@ function ConferenceImagesPage() {
         '../pages/past/NGNDAI2025/assets/images/conferenceImages/**/*.{png,jpg,jpeg,gif,JPG,JPEG}',
         { eager: true }
     );
+    
+    // Function to create a compressed thumbnail URL from the original image
+const createThumbnailUrl = (originalUrl) => {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        img.onload = () => {
+            try {
+                // Create reasonably sized thumbnails for fast loading but good clarity
+                const maxThumbnailSize = 500; // ⬅ increased from 150
+
+                let width = img.width;
+                let height = img.height;
+
+                // Calculate new dimensions maintaining aspect ratio
+                if (width > height) {
+                    if (width > maxThumbnailSize) {
+                        height *= maxThumbnailSize / width;
+                        width = maxThumbnailSize;
+                    }
+                } else {
+                    if (height > maxThumbnailSize) {
+                        width *= maxThumbnailSize / height;
+                        height = maxThumbnailSize;
+                    }
+                }
+
+                canvas.width = width;
+                canvas.height = height;
+
+                ctx.drawImage(img, 0, 0, width, height);
+
+                // Higher quality for sharper thumbnails
+                resolve(canvas.toDataURL('image/jpeg', 0.8)); // ⬅ increased from 0.6
+            } catch (error) {
+                console.error('Error creating thumbnail:', error);
+                reject(error);
+            }
+        };
+
+        img.onerror = () => {
+            console.error('Error loading image:', originalUrl);
+            reject(new Error('Failed to load image'));
+        };
+
+        img.src = originalUrl;
+    });
+};
 
     // Random size presets for collage effect
     const sizePresets = [
@@ -68,11 +118,26 @@ function ConferenceImagesPage() {
             const endIndex = Math.min(imagesPerPage, allDayImages.length);
             const currentPageImages = allDayImages.slice(startIndex, endIndex);
 
-            // Assign random collage sizes
-            const loadedImages = currentPageImages.map(image => ({
-                ...image,
-                sizeClass: sizePresets[Math.floor(Math.random() * sizePresets.length)]
-            }));
+            // Create compressed thumbnails for faster loading
+            const loadedImages = await Promise.all(
+                currentPageImages.map(async (image) => {
+                    try {
+                        const thumbnail = await createThumbnailUrl(image.src);
+                        return {
+                            ...image,
+                            thumbnail,
+                            sizeClass: sizePresets[Math.floor(Math.random() * sizePresets.length)]
+                        };
+                    } catch (error) {
+                        console.warn('Failed to create thumbnail for', image.name, error);
+                        return {
+                            ...image,
+                            thumbnail: image.src, // Fallback to original image
+                            sizeClass: sizePresets[Math.floor(Math.random() * sizePresets.length)]
+                        };
+                    }
+                })
+            );
 
             setImages(loadedImages);
             setIsLoading(false);
@@ -169,7 +234,7 @@ function ConferenceImagesPage() {
                                         {/* Image */}
                                         <div className={`w-full overflow-hidden rounded-xl ${image.sizeClass}`}>
                                             <motion.img
-                                                src={image.src}
+                                                src={image.thumbnail || image.src}
                                                 alt={image.name}
                                                 loading="lazy"
                                                 className="w-full h-full object-cover cursor-pointer bg-base-300
