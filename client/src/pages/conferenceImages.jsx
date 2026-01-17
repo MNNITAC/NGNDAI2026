@@ -5,7 +5,6 @@ import { TbZoomScan } from "react-icons/tb";
 import { FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-
 function ConferenceImagesPage() {
     const [selectedDay, setSelectedDay] = useState('day1');
     const [images, setImages] = useState([]);
@@ -14,64 +13,48 @@ function ConferenceImagesPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
+
     const imagesPerPage = 50;
 
     // Dynamically import all images from the conferenceImages folder
-    const imageModules = import.meta.glob('../pages/past/NGNDAI2025/assets/images/conferenceImages/**/*.{png,jpg,jpeg,gif,JPG,JPEG}', { eager: true });
-    
+    const imageModules = import.meta.glob(
+        '../pages/past/NGNDAI2025/assets/images/conferenceImages/**/*.{png,jpg,jpeg,gif,JPG,JPEG}',
+        { eager: true }
+    );
 
-    // Function to create a thumbnail URL from the original image
-    const createThumbnailUrl = (originalUrl) => {
-        const img = new Image();
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
+    // Random size presets for collage effect
+    const sizePresets = [
+        "aspect-square",
+        "aspect-[3/4]",
+        "aspect-[4/3]",
+        "aspect-[9/16]",
+        "aspect-[2/3]",
+        "aspect-[5/4]",
+        "h-56",
+        "h-72",
+        "h-96",
+        "h-[28rem]"
+    ];
 
-        return new Promise((resolve) => {
-            img.onload = () => {
-                // Set thumbnail size (adjust these values as needed)
-                const maxWidth = 300;
-                const maxHeight = 200;
-
-                let width = img.width;
-                let height = img.height;
-
-                // Calculate new dimensions maintaining aspect ratio
-                if (width > height) {
-                    if (width > maxWidth) {
-                        height *= maxWidth / width;
-                        width = maxWidth;
-                    }
-                } else {
-                    if (height > maxHeight) {
-                        width *= maxHeight / height;
-                        height = maxHeight;
-                    }
-                }
-
-                canvas.width = width;
-                canvas.height = height;
-
-                // Draw and compress image
-                ctx.drawImage(img, 0, 0, width, height);
-                resolve(canvas.toDataURL('image/jpeg', 0.5));
-            };
-            img.src = originalUrl;
-        });
+    // Function to get all images for the selected day
+    const getAllDayImages = () => {
+        const allDayImages = [];
+        for (const path in imageModules) {
+            if (path.includes(`/${selectedDay}/`)) {
+                allDayImages.push({
+                    src: imageModules[path].default,
+                    name: path.split('/').pop()
+                });
+            }
+        }
+        return allDayImages;
     };
 
     useEffect(() => {
         const loadImages = async () => {
             setIsLoading(true);
             // Get all images for the selected day
-            const allDayImages = [];
-            for (const path in imageModules) {
-                if (path.includes(`/${selectedDay}/`)) {
-                    allDayImages.push({
-                        src: imageModules[path].default,
-                        name: path.split('/').pop()
-                    });
-                }
-            }
+            const allDayImages = getAllDayImages();
 
             // Calculate total pages
             const calculatedTotalPages = Math.ceil(allDayImages.length / imagesPerPage);
@@ -85,13 +68,11 @@ function ConferenceImagesPage() {
             const endIndex = Math.min(imagesPerPage, allDayImages.length);
             const currentPageImages = allDayImages.slice(startIndex, endIndex);
 
-            // Process thumbnails only for current page
-            const loadedImages = await Promise.all(
-                currentPageImages.map(async (image) => ({
-                    ...image,
-                    thumbnail: await createThumbnailUrl(image.src)
-                }))
-            );
+            // Assign random collage sizes
+            const loadedImages = currentPageImages.map(image => ({
+                ...image,
+                sizeClass: sizePresets[Math.floor(Math.random() * sizePresets.length)]
+            }));
 
             setImages(loadedImages);
             setIsLoading(false);
@@ -103,28 +84,18 @@ function ConferenceImagesPage() {
         const loadPageImages = async () => {
             setIsLoading(true);
             // Get all images for the selected day
-            const allDayImages = [];
-            for (const path in imageModules) {
-                if (path.includes(`/${selectedDay}/`)) {
-                    allDayImages.push({
-                        src: imageModules[path].default,
-                        name: path.split('/').pop()
-                    });
-                }
-            }
+            const allDayImages = getAllDayImages();
 
             // Get current page's images
             const startIndex = (currentPage - 1) * imagesPerPage;
             const endIndex = Math.min(startIndex + imagesPerPage, allDayImages.length);
             const currentPageImages = allDayImages.slice(startIndex, endIndex);
 
-            // Process thumbnails only for current page
-            const loadedImages = await Promise.all(
-                currentPageImages.map(async (image) => ({
-                    ...image,
-                    thumbnail: await createThumbnailUrl(image.src)
-                }))
-            );
+            // Assign random collage sizes
+            const loadedImages = currentPageImages.map(image => ({
+                ...image,
+                sizeClass: sizePresets[Math.floor(Math.random() * sizePresets.length)]
+            }));
 
             setImages(loadedImages);
             setIsLoading(false);
@@ -153,12 +124,14 @@ function ConferenceImagesPage() {
             id="conferenceImagesPage"
             className="mb-8 flex-col rounded-md shadow-sm lg:p-8 bg-base-200/40 text-base-content w-full flex items-center"
         >
-            <div className="max-w-[1400px]">
+            <div className="max-w-[1400px] w-full">
                 <h1 className="mb-4 text-5xl font-bold text-primary font-playfair py-8 text-center">
                     Conference Images
                 </h1>
+
                 <div className="flex justify-center align-middle flex-col">
                     <div className="border-dotted border-black rounded-lg p-6 text-center shadow-md flex flex-col items-center gap-6 hover:shadow-lg origin-center transition-all bg-base-100 w-full">
+
                         {/* Day selector */}
                         <div className="w-full max-w-xs mb-4">
                             <select
@@ -181,47 +154,6 @@ function ConferenceImagesPage() {
                             </div>
                         )}
 
-                        {/* Image grid */}
-                        {/* {!isLoading && (
-                            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-1 w-full">
-                                {images.map((image, index) => (
-                                    <div key={index} className="card relative">
-                                        <figure className="p-1">
-                                            <img
-                                                src={image.thumbnail}
-                                                alt={image.name}
-                                                loading="lazy"
-                                                className="rounded-lg h-48 w-full object-cover cursor-pointer hover:shadow-xl hover:scale-[101%] transition-all duration-[.1s]"
-                                                onClick={() => {
-                                                    setPhotoIndex(index);
-                                                    setIsOpen(true);
-                                                }}
-                                            />
-                                        </figure>
-                                        <div className="card-body items-center text-center absolute bottom-0 right-2 p-2 px-4">
-                                            <div className="card-actions justify-center">
-                                                <button
-                                                    className="btn p-2 btn-sm bg-white bg-opacity-75 flex justify-center items-center content-center text-center"
-                                                    onClick={() => {
-                                                        setPhotoIndex(index);
-                                                        setIsOpen(true);
-                                                    }}
-                                                >
-                                                    <TbZoomScan size="24"/>
-                                                </button>
-                                                <button
-                                                    className="btn p-2 btn-sm bg-white bg-opacity-75 flex justify-center items-center content-center text-center"
-                                                    onClick={() => handleDownload(image.src, image.name)}
-                                                >
-                                                    <FaDownload/>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        )} */}
-
                         {/* Image collage */}
                         {!isLoading && (
                             <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 w-full">
@@ -235,23 +167,24 @@ function ConferenceImagesPage() {
                                         viewport={{ once: true }}
                                     >
                                         {/* Image */}
-                                        <motion.img
-                                            src={image.thumbnail || image.src}
-                                            alt={image.name}
-                                            loading="lazy"
-                                            className="w-full rounded-xl cursor-pointer bg-base-300
-                     hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
-                                            onClick={() => {
-                                                setPhotoIndex(index);
-                                                setIsOpen(true);
-                                            }}
-                                        />
+                                        <div className={`w-full overflow-hidden rounded-xl ${image.sizeClass}`}>
+                                            <motion.img
+                                                src={image.src}
+                                                alt={image.name}
+                                                loading="lazy"
+                                                className="w-full h-full object-cover cursor-pointer bg-base-300
+                                                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+                                                onClick={() => {
+                                                    setPhotoIndex(index);
+                                                    setIsOpen(true);
+                                                }}
+                                            />
+                                        </div>
 
                                         {/* Overlay buttons */}
                                         <div className="absolute inset-0 flex items-end justify-end p-3
-                        bg-gradient-to-t from-black/50 to-transparent
-                        opacity-0 group-hover:opacity-100 transition-all">
-
+                                                        bg-gradient-to-t from-black/50 to-transparent
+                                                        opacity-0 group-hover:opacity-100 transition-all">
                                             <div className="flex gap-2">
                                                 <button
                                                     className="btn btn-sm bg-white/80 backdrop-blur"
@@ -276,7 +209,6 @@ function ConferenceImagesPage() {
                             </div>
                         )}
 
-
                         {/* Pagination */}
                         {!isLoading && totalPages > 1 && (
                             <div className="flex justify-center gap-2 mt-4">
@@ -299,13 +231,14 @@ function ConferenceImagesPage() {
                                 </button>
                             </div>
                         )}
-                
+
                         {/* Show message if no images found */}
                         {!isLoading && images.length === 0 && (
                             <div className="text-center text-gray-500 my-8">
                                 No images found for {selectedDay}
                             </div>
                         )}
+
                     </div>
                 </div>
             </div>
