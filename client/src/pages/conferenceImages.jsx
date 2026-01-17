@@ -1,8 +1,10 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import {TbZoomScan} from "react-icons/tb";
-import {FaDownload} from "react-icons/fa";
+import { TbZoomScan } from "react-icons/tb";
+import { FaDownload } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 
 function ConferenceImagesPage() {
     const [selectedDay, setSelectedDay] = useState('day1');
@@ -15,7 +17,8 @@ function ConferenceImagesPage() {
     const imagesPerPage = 50;
 
     // Dynamically import all images from the conferenceImages folder
-    const imageModules = import.meta.glob('../assets/images/conferenceImages/**/*.{png,jpg,jpeg,gif,JPG,JPEG}', { eager: true });
+    const imageModules = import.meta.glob('../pages/past/NGNDAI2025/assets/images/conferenceImages/**/*.{png,jpg,jpeg,gif,JPG,JPEG}', { eager: true });
+    
 
     // Function to create a thumbnail URL from the original image
     const createThumbnailUrl = (originalUrl) => {
@@ -179,7 +182,7 @@ function ConferenceImagesPage() {
                         )}
 
                         {/* Image grid */}
-                        {!isLoading && (
+                        {/* {!isLoading && (
                             <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-1 w-full">
                                 {images.map((image, index) => (
                                     <div key={index} className="card relative">
@@ -217,7 +220,62 @@ function ConferenceImagesPage() {
                                     </div>
                                 ))}
                             </div>
+                        )} */}
+
+                        {/* Image collage */}
+                        {!isLoading && (
+                            <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 w-full">
+                                {images.map((image, index) => (
+                                    <motion.div
+                                        key={index}
+                                        className="mb-4 break-inside-avoid relative group"
+                                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                        transition={{ duration: 0.4, ease: "easeOut" }}
+                                        viewport={{ once: true }}
+                                    >
+                                        {/* Image */}
+                                        <motion.img
+                                            src={image.thumbnail || image.src}
+                                            alt={image.name}
+                                            loading="lazy"
+                                            className="w-full rounded-xl cursor-pointer bg-base-300
+                     hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+                                            onClick={() => {
+                                                setPhotoIndex(index);
+                                                setIsOpen(true);
+                                            }}
+                                        />
+
+                                        {/* Overlay buttons */}
+                                        <div className="absolute inset-0 flex items-end justify-end p-3
+                        bg-gradient-to-t from-black/50 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-all">
+
+                                            <div className="flex gap-2">
+                                                <button
+                                                    className="btn btn-sm bg-white/80 backdrop-blur"
+                                                    onClick={() => {
+                                                        setPhotoIndex(index);
+                                                        setIsOpen(true);
+                                                    }}
+                                                >
+                                                    <TbZoomScan size={18} />
+                                                </button>
+
+                                                <button
+                                                    className="btn btn-sm bg-white/80 backdrop-blur"
+                                                    onClick={() => handleDownload(image.src, image.name)}
+                                                >
+                                                    <FaDownload />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
                         )}
+
 
                         {/* Pagination */}
                         {!isLoading && totalPages > 1 && (
@@ -241,7 +299,7 @@ function ConferenceImagesPage() {
                                 </button>
                             </div>
                         )}
-
+                
                         {/* Show message if no images found */}
                         {!isLoading && images.length === 0 && (
                             <div className="text-center text-gray-500 my-8">
