@@ -82,7 +82,7 @@ function Carousal() {
             key={i}
             src={img}
             alt={`news ${i + 1}`}
-            className="w-1/3 h-[250px] md:h-[400px] object-contain flex-shrink-0"
+            className={`w-1/3 h-[250px] md:h-[400px] object-cover object-top flex-shrink-0 ${(i === (current + 1) % displayImages.length) ? 'border-[5px] border-purple-500 hover:border-[10px]' : ''}`}
           />
         ))}
       </div>
