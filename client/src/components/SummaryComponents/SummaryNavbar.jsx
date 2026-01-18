@@ -22,12 +22,12 @@ const SummaryNavbar = () => {
         prevPath: "",
     },
     {
-        name: "Glossary",
+        name: "Media Coverage",
         link: "",
         prevPath: "",
     },
     {
-        name: "Media Coverage",
+        name: "Glossary",
         link: "",
         prevPath: "",
     },
@@ -81,7 +81,7 @@ const SummaryNavbar = () => {
               <div className="items-center gap-2 mr-[20px]">
                 {navItems.map((el) => (
                   <Dropdown
-                    key={el.link}
+                    key={`${el.link || el.name}`}
                     el={el}
                     prevPath={el.prevPath || ""}
                     noUnderline={true}
@@ -97,7 +97,13 @@ const SummaryNavbar = () => {
           className={`hidden items-center gap-2 ml-24 md:ml-auto md:flex self-center mx-auto`}
         >
           {navItems.map((el) => (
-            <Dropdown key={el.link} el={el} prevPath={el.prevPath || ""} noUnderline={true} highlight={el.highlight} />
+            <Dropdown
+              key={`${el.link || el.name}`}
+              el={el}
+              prevPath={el.prevPath || ""}
+              noUnderline={true}
+              highlight={el.highlight}
+            />
           ))}
         </div>
         <Accessability />
