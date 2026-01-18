@@ -5,7 +5,7 @@ import logo from "../assets/images/MNNIT logo.png"
 function Footer() {
     return (
         <footer
-            className="footer  bg-base-200 text-base-content p-10 pb-0 gap-4 flex flex-col items-center mt-4 sm:mt-0"
+            className="footer  bg-base-200 text-base-content p-10 pb-0 gap-4 flex flex-col items-center mt-4 sm:mt-0 scroll-mt-16"
             id="footer">
 
             <div className="flex flex-col md:flex-row md:items-center w-full md:justify-between">
