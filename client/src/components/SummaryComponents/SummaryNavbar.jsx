@@ -23,7 +23,7 @@ const SummaryNavbar = () => {
     },
     {
         name: "Media Coverage",
-        link: "",
+        link: "/2025/#media-coverage",
         prevPath: "",
     },
     {

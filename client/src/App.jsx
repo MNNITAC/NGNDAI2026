@@ -18,7 +18,6 @@ import CulturalProgramPage from "./pages/CulturalEvent.jsx";
 import DownloadSchedulePage from "./pages/DownloadSchedulePage.jsx";
 import MentorshipSessionPage from "./pages/MentorshipSession.jsx";
 import ConferenceImagesPage from "./pages/conferenceImages.jsx";
-// import { ngndai2025Routes } from "./pages/past/NGNDAI2025/Routes.jsx";
 import SummaryRoot from "./pages/SummaryRoot.jsx";
 
 function App() {
@@ -76,7 +75,7 @@ function App() {
                                 element: <ConferenceImagesPage/>
                             }, {
                                 path: "PaperSubmissionGuidelines",
-                                element: <PaperSubmission/>
+                                element: <PaperSubmissionPage/>
                             }
                         ]
                     }
@@ -86,8 +85,8 @@ function App() {
                 element : <SummaryRoot/>,
                 // children : [
                 //     {
-                //         path : "*",
-                //         element: <ErrorPage/>,
+                //         path : "test",
+                //         element: <CarouselPage/>,
                 //     }
                 // ],
             },

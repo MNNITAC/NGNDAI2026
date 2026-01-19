@@ -5,6 +5,7 @@ import SummaryNavbar from "../components/SummaryComponents/SummaryNavbar.jsx";
 import About from "../components/SummaryComponents/AboutConference.jsx";
 import SpeakerCarousel from "../components/SummaryComponents/SpeakerCarousel.jsx"
 import Sponsors from '../components/SummaryComponents/Sponsors.jsx';
+import NewspaperCarousel from '../components/SummaryComponents/NewpaperCarousel.jsx';
 const SummaryRoot = () => {
 
     const location = useLocation();
@@ -34,6 +35,7 @@ const SummaryRoot = () => {
                     <About />
                     <SpeakerCarousel/>
                     <Sponsors/>
+                    <NewspaperCarousel/>
                 </main>
             </div>
             <Footer />

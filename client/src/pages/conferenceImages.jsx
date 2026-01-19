@@ -18,7 +18,7 @@ function ConferenceImagesPage() {
 
     // Dynamically import all images from the conferenceImages folder
     const imageModules = import.meta.glob(
-        '../pages/past/NGNDAI2025/assets/images/conferenceImages/**/*.{png,jpg,jpeg,gif,JPG,JPEG}',
+        '../assets/images/conferenceImages/**/*.{png,jpg,jpeg,gif,JPG,JPEG}',
         { eager: true }
     );
     
