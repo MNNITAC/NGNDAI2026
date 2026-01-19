@@ -62,7 +62,7 @@ const MediaCoverage = () => {
 
       {/* 2. Carousel Container - Full Width */}
       <div className="w-full">
-        <div className="relative w-full overflow-hidden bg-gray-100">
+        <div className="relative w-full overflow-hidden bg-gray-200">
           <style>{`
           .news-swiper-container {
             width: 100%;
@@ -109,6 +109,8 @@ const MediaCoverage = () => {
             transform: scale(1.05);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             z-index: 10;
+            border: 5px solid #6014a7; /* purple-500 */
+            border-radius: 5px;
           }
 
           .clipping-card img {
@@ -126,7 +128,7 @@ const MediaCoverage = () => {
             className="news-swiper-container text-primary"
             slidesPerView={"auto"}
             centeredSlides={true}
-            spaceBetween={20}
+            spaceBetween={40}
             loop={true}
             autoplay={{
               delay: 3000,
