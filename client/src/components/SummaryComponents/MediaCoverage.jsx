@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // Swiper Imports
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Keyboard, Mousewheel, Autoplay } from "swiper/modules";
+import { Pagination, Keyboard, Autoplay } from "swiper/modules";
 
 // Swiper Styles
 import "swiper/css";
@@ -43,7 +43,7 @@ const images = [
   img24, img25, img26, img27, img28, img29,
 ];
 
-const NewspaperCarousel = () => {
+const MediaCoverage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const closeZoom = () => setSelectedImage(null);
 
@@ -121,7 +121,7 @@ const NewspaperCarousel = () => {
         `}</style>
 
           <Swiper
-            modules={[Pagination, Keyboard, Mousewheel, Autoplay]}
+            modules={[Pagination, Keyboard, Autoplay]}
             // Added text-primary here so 'currentColor' in CSS picks up the heading color
             className="news-swiper-container text-primary"
             slidesPerView={"auto"}
@@ -135,7 +135,6 @@ const NewspaperCarousel = () => {
             }}
             pagination={{ clickable: true, dynamicBullets: true }}
             keyboard={{ enabled: true }}
-            mousewheel={true}
           >
             {images.map((img, i) => (
               <SwiperSlide key={i} className="variable-width-slide">
@@ -156,10 +155,9 @@ const NewspaperCarousel = () => {
         <div className="relative w-full aspect-video overflow-hidden rounded-xl shadow-lg bg-black">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/watch?v=CGdjz2TcFUc"
+            src="https://www.youtube.com/embed/CGdjz2TcFUc?autoplay=1&mute=1&playsinline=1"
             title="Media coverage video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
         </div>
@@ -192,4 +190,4 @@ const NewspaperCarousel = () => {
   );
 };
 
-export default NewspaperCarousel;
+export default MediaCoverage;
