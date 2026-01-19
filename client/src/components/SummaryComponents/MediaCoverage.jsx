@@ -151,6 +151,21 @@ const NewspaperCarousel = () => {
         </div>
       </div>
 
+      {/* 🎥 Embedded YouTube Video - BELOW carousel */}
+      <div className="w-full max-w-[1100px] mx-auto px-4 mt-10">
+        <div className="relative w-full aspect-video overflow-hidden rounded-xl shadow-lg bg-black">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/watch?v=CGdjz2TcFUc"
+            title="Media coverage video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+
+
       {/* Zoom Modal Overlay */}
       {selectedImage && (
         <div
