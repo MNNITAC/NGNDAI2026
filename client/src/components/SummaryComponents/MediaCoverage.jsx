@@ -157,7 +157,7 @@ const MediaCoverage = () => {
         <div className="relative w-full aspect-video overflow-hidden rounded-xl shadow-lg bg-black">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/CGdjz2TcFUc?autoplay=1&mute=1&playsinline=1"
+            src="https://www.youtube.com/embed/CGdjz2TcFUc?autoplay=1&mute=1&playsinline=1&loop=1&playlist=CGdjz2TcFUc"
             title="Media coverage video"
             allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
