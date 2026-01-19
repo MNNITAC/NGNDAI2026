@@ -26,7 +26,7 @@ const App = () => {
     return (
         <>
             {useLocation().pathname === "/" && <Banner/>}
-            <div className="relative flex min-h-screen flex-col gap-5 rounded-md text-base-content items-center">
+            <div className="relative flex min-h-[50vh] flex-col gap-5 rounded-md text-base-content items-center">
                 <div className="relative md:flex md:flex-row w-full px-2 md:px-0">
                     {/*<Sidebar activeSection={activeSection} sectionId={sectionId}/>*/}
                     <Outlet/>

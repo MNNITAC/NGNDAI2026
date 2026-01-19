@@ -7,6 +7,7 @@ import PaperSubmissionPage from "./pages/PaperSubmissionPage.jsx";
 import SchedulePage from "./pages/SchedulePage.jsx";
 import AdvisoryCommittee from "./pages/AdvisoryCommittee.jsx";
 import SubmissionGuidelinesPage from "./pages/SubmissionGuidelines.jsx";
+import CarouselPage from "./pages/CarouselPage.jsx";
 import RegistrationPage from "./pages/RegistrationPage.jsx";
 import SpecialSession from "./pages/SpecialSession.jsx";
 import StudentCommittee from "./pages/StudentCommittee.jsx";
@@ -32,6 +33,7 @@ export const ngndai2025Routes = [
           { path: "schedule", element: <SchedulePage /> },
           { path: "advisoryCommittee", element: <AdvisoryCommittee /> },
           { path: "submissionGuidelines", element: <SubmissionGuidelinesPage /> },
+          { path: "carasoulPage", element: <CarouselPage /> },
           { path: "registration", element: <RegistrationPage /> },
           { path: "specialSession", element: <SpecialSession /> },
           { path: "studentCommittee", element: <StudentCommittee /> },

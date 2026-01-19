@@ -91,6 +91,10 @@ const Navbar = () => {
       link: "/2025/submissionGuidelines",
     },
     {
+      name: "Carousel Page",
+      link: "/2025/carasoulPage",
+    },
+    {
       name: "Conference Program",
       link: "/2025/schedule",
       sublinks: [

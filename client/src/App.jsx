@@ -74,6 +74,9 @@ function App() {
                             }, {
                                 path: "conferenceImages",
                                 element: <ConferenceImagesPage/>
+                            }, {
+                                path: "PaperSubmissionGuidelines",
+                                element: <PaperSubmission/>
                             }
                         ]
                     }

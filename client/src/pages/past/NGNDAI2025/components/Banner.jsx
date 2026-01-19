@@ -1,5 +1,5 @@
 import React from "react";
-import Carousal from "./Miscellaneous/Carousal.jsx";
+import Carousal from "./CarouselPageComponents/Carousel.jsx";
 import {Link} from "react-router-dom";
 import cfp from "../assets/documents/NGNDAI CFP 2025.pdf"
 import schedule from "../assets/documents/Conference_Schedule_NGNDAI.pdf"
