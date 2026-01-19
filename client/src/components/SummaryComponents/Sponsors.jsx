@@ -7,8 +7,8 @@ import hp from '../../assets/sponsors/HP_logo.png';
 function Sponsors() {
     return (
 
-        <div
-            className="mb-8 flex-col rounded-md text-base-content w-full flex items-center lg:pb-4">
+        <div id = "sponsors"
+            className="mb-8 flex-col rounded-md text-base-content w-full flex items-center py-8">
             <div className="max-w-[1100px] w-full p-0">
                 <h1 className="text-4xl font-bold text-primary font-playfair mb-12 ">Our Sponsors</h1>
                 <div className=" wrap flex flex-wrap align-middle items-center gap-16">
