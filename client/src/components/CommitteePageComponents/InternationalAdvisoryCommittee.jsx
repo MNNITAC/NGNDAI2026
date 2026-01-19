@@ -30,6 +30,7 @@ import ks
 import veb from "../../assets/images/International Advisory Committee/Prof. Valentina Emilia Balas.jpeg"
 import mj from "../../assets/images/International Advisory Committee/mj.jpg"
 import us from "../../assets/images/International Advisory Committee/us.jpg"
+import hmp from "../../assets/images/International Advisory Committee compressed/Dr. Hari Mohan Pandey.png"
 
 import {GoLinkExternal} from "react-icons/go";
 
@@ -168,20 +169,25 @@ function InternationalAdvisoryCommittee() {
         //     homepage: "https://www.ist.osaka-u.ac.jp/english/researcher/detail.php?id=148"
         // },
         {
-            name: "Prof. Gnana Bharathy",
-            university: "University of Technology Sydney, Australia",
-            image: gb,
-            homepage: "https://profiles.uts.edu.au/Gnana.Bharathy"
+            name: "Prof. Valentina Emilia Balas",
+            university: "Faculty of Engineering, University of Arad, Romania",
+            image: veb,
+            homepage: "https://www.drbalas.ro/valentina-emilia"
+        },{
+            name: "Dr. Hari Mohan Pandey",
+            university: "Bournemouth University, UK",
+            image: hmp,
+            homepage: "https://staffprofiles.bournemouth.ac.uk/display/hpandey"
         },{
             name: "Dr. Koushik Sinha",
             university: "Southern Illinois University, Carbondale",
             image: ks,
             homepage: "http://cs.siu.edu/~ksinha"
         },{
-            name: "Prof. Valentina Emilia Balas",
-            university: "Faculty of Engineering, University of Arad, Romania",
-            image: veb,
-            homepage: "https://www.drbalas.ro/valentina-emilia"
+            name: "Prof. Gnana Bharathy",
+            university: "University of Technology Sydney, Australia",
+            image: gb,
+            homepage: "https://profiles.uts.edu.au/Gnana.Bharathy"
         },{
             name: "Prof. Meena Jha",
             university: "Central Queensland University, Australia",

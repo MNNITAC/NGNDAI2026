@@ -51,7 +51,9 @@ function NationalAdvisoryCommittee() {
             name: "Prof. Sukumar Nandi", designation: "", university: "IIT Guwahati, India"
         }, {
             name: "Prof. D. P. Vidhyarthi", designation: "", university: "JNU, New Delhi, India"
-        }, {
+        }, 
+        {name: "Dr. Sonali Agarwal", designation: "", university: "IIIT Allahabad, India"},       
+        {
             name: "Prof. Ram Bilas Pachori",
             designation: "",
             university: "IIT Indore, India"
@@ -62,8 +64,7 @@ function NationalAdvisoryCommittee() {
             name: "Dr. Dilip Singh Sisodia",
             designation: "",
             university: "NIT Raipur, India"
-        },
-        {name: "Prof. G R Sinha", designation: "", university: "GSFC University, Gujarat, India"},
+        },        
         {name: "Dr. Aditya Nigam", designation: "", university: "IIT Mandi, India"},
         // {
         // name: "Dr. Reshma Rastogi", designation: "", university: "SAU, New Delhi, India"
@@ -85,7 +86,7 @@ function NationalAdvisoryCommittee() {
         },
         {name: "Prof. Anurag Mishra", designation: "", university: "DDUC, University of Delhi, India"},
         {name: "Dr. Reshma Rastogi", designation: "", university: "South Asian University, New Delhi, India"},
-        {name: "Dr. Sonali Agarwal", designation: "", university: "IIIT Allahabad, India"},
+        {name: "Prof. G R Sinha", designation: "", university: "GSFC University, Gujarat, India"},
         {name: "Dr. Ram Prasad K", designation: "", university: "Sai University, India"},
         // {name: "Dr. Rajni Bala", designation: "", university: "University of Delhi, New Delhi, India"}
     ];
