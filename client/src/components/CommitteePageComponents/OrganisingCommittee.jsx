@@ -31,7 +31,10 @@ import vs from "../../assets/images/Archive3/Dr. Vishal Srivastava.png";
 import ad from "../../assets/images/Archive3 compressed/Dr. Anuja Dixit.jpg";
 import ds from "../../assets/images/Archive3 compressed/Dinesh singh.jpg";
 import rd from "../../assets/images/Archive3/Dr. Rupesh K Dewang.jpg";
-
+import gc from "../../assets/images/Organising Committee/Prof. Girija Chetty, University of Canberra.jpeg"
+import nt from "../../assets/images/Archive3 compressed/Prof. Neeraj Tyagi.jpg"
+import ap from "../../assets/images/Organising Committee/Mr. Anurag Pandey.jpg"
+import sr from "../../assets/images/Archive3 compressed/Dr. Saugata Roy.jpg"
 
 function OrganisingCommittee() {
 
@@ -45,17 +48,31 @@ function OrganisingCommittee() {
         }]
     }, {
         members: [{
-            name: "Prof. M. M. Gore",
-            image: mmg,
-            about: "MNNIT Allahabad, India",
-            role: "General Chair",
-            homepage: "https://www.mnnit.ac.in/profile/gore"
+            name: "Prof. Girija Chetty",
+            image: gc,
+            about: "University of Canberra, Australia",
+            role: "Honorary Chair",
+            homepage: "https://researchprofiles.canberra.edu.au/en/persons/girija-chetty/"
         }, {
             name: "Prof. P. N. Suganthan",
             image: pns,
             about: "Qatar University, Qatar",
             role: "Honorary Chair",
             homepage: "https://www3.ntu.edu.sg/home/epnsugan/"
+        }]
+    }, {
+        members: [{
+            name: "Prof. M. M. Gore",
+            image: mmg,
+            about: "MNNIT Allahabad, India",
+            role: "General Chair",
+            homepage: "https://www.mnnit.ac.in/profile/gore"
+        }, {
+            name: "Prof. Neeraj Tyagi",
+            image: nt,
+            about: "MNNIT Allahabad, India",
+            role: "General Chair",
+            homepage: "http://www.mnnit.ac.in/profile/neeraj"
         }]
     }, {
         members: [{
@@ -96,6 +113,12 @@ function OrganisingCommittee() {
             about: "MNNIT Allahabad, India",
             role: "Publication Chair",
             homepage: "https://scholar.google.com/citations?user=JDV7Af0AAAAJ&hl=en"
+        }, {
+            name: "Dr. Anoj Kumar",
+            image: ak2,
+            about: "MNNIT Allahabad, India",
+            role: "Publication Chair",
+            homepage: "https://mnnit.ac.in/profile/anojk"
         }]
     }, {
         members: [{
@@ -110,12 +133,6 @@ function OrganisingCommittee() {
             about: "MNNIT Allahabad, India",
             role: "Special Session Chair",
             homepage: "https://mnnit.ac.in/profile/preview.php?login=ss"
-        }, {
-            name: "Dr. Shashank Srivastava",
-            image: ss2,
-            about: "MNNIT Allahabad, India",
-            role: "Special Session Chair",
-            homepage: "https://mnnit.ac.in/profile/shashank12"
         }, {
             name: "Dr. Pragya Dwivedi",
             image: pd,
@@ -137,14 +154,26 @@ function OrganisingCommittee() {
             role: "Industry Track Chair",
             homepage: "https://mnnit.ac.in/profile/indudohare"
         }, {
-            name: "Dr. Mandhatya Singh",
-            image: ms,
-            about: "Vanix Technology, Pvt., India",
+            name: "Dr. Vibhav Prakash Singh",
+            image: vps,
+            about: "MNNIT Allahabad, India",
             role: "Industry Track Chair",
-            homepage: "https://in.linkedin.com/in/mandhatya"
+            homepage: "https://mnnit.ac.in/profile/vibhav"
+        },{
+            name: "Mr. Anurag Pandey",
+            image: ap,
+            about: "Capability Head, Computer Vision, HCLTech, Noida",
+            role: "Industry Track Chair",
+            homepage: "https://www.linkedin.com/in/anurag-pandey-5244b885/"
         }]
     }, {
         members: [{
+            name: "Prof. Anil Kumar Singh",
+            image: aks,
+            about: "MNNIT Allahabad, India",
+            role: "Sponsorship Chair",
+            homepage: "https://www.mnnit.ac.in/profile/ak"
+        },{
             name: "Dr. Joohi Chauhan",
             image: jc,
             about: "MNNIT Allahabad, India",
@@ -171,17 +200,11 @@ function OrganisingCommittee() {
             role: "Publicity Chair",
             homepage: "https://mnnit.ac.in/profile/dinesh_singh"
         }, {
-            name: " Dr. Rupesh K Dewang",
-            image: rd,
+            name: "Dr. Kailash W. Kalare",
+            image: kw,
             about: "MNNIT Allahabad, India",
             role: "Publicity Chair",
-            homepage: "https://mnnit.ac.in/profile/rupeshdewang"
-        }, {
-            name: "Dr. Amit Biswas",
-            image: ab,
-            about: "MNNIT Allahabad, India",
-            role: "Publicity Chair",
-            homepage: "https://mnnit.ac.in/profile/previewr.php?id=1834"
+            homepage: "https://mnnit.ac.in/profile/kailashwk"
         }, {
             name: "Dr. Vishal Srivastava",
             image: vs,
@@ -191,23 +214,23 @@ function OrganisingCommittee() {
         }]
     }, {
         members: [{
-            name: "Prof. Anil Kumar Singh",
-            image: aks,
-            about: "MNNIT Allahabad, India",
-            role: "Finance Chair",
-            homepage: "https://www.mnnit.ac.in/profile/ak"
-        }, {
             name: "Dr. Sarsij Tripathi",
             image: st,
             about: "MNNIT Allahabad, India",
             role: "Finance Chair",
             homepage: "https://mnnit.ac.in/profile/previewr.php?id=1702"
-        }, {
-            name: "Dr. Kailash W. Kalare",
-            image: kw,
+        },{
+            name: "Dr. Shashank Srivastava",
+            image: ss2,
             about: "MNNIT Allahabad, India",
             role: "Finance Chair",
-            homepage: "https://mnnit.ac.in/profile/kailashwk"
+            homepage: "http://mnnit.ac.in/profile/shashank12"
+        }, {
+            name: "Dr. Indu Dohare",
+            image: id,
+            about: "MNNIT Allahabad, India",
+            role: "Finance Chair",
+            homepage: "https://mnnit.ac.in/profile/indudohare"
         }]
     }, {
         members: [{
@@ -231,24 +254,19 @@ function OrganisingCommittee() {
         }]
     }, {
         members: [{
-            name: "Dr. Anoj Kumar",
-            image: ak2,
-            about: "MNNIT Allahabad, India",
-            role: "Local Organizing Committee",
-            homepage: "https://mnnit.ac.in/profile/anojk"
-        }, {
-            name: "Dr. Vibhav Prakash Singh",
-            image: vps,
-            about: "MNNIT Allahabad, India",
-            role: "Local Organizing Committee",
-            homepage: "https://mnnit.ac.in/profile/vibhav"
-        }, {
             name: "Dr. Anuja Dixit",
             image: ad,
             about: "MNNIT Allahabad, India",
             role: "Local Organizing Committee",
             homepage: "https://mnnit.ac.in/profile/anujadixit"
-        }]
+        },{
+            name: "Dr. Saugata Roy",
+            image: sr,
+            about: "MNNIT Allahabad, India",
+            role: "Local Organizing Committee",
+            homepage: "http://mnnit.ac.in/profile/sgtroy"
+        }
+    ]
     }];
 
 
@@ -260,11 +278,10 @@ function OrganisingCommittee() {
         <div className="px-1 w-full">
 
             <div className="flex w-full flex-col gap-4 justify-center items-center align-middle">
-                {organisingCommittee.map((el, i) => <div key={i}
-                                                         className=" w-full">
+                {organisingCommittee.map((el, i) => <div key={i} className={`w-full ${i % 2 === 0 ? 'bg-base-200/20' : ''}`}>
                     <div
-                        className={`flex w-full p-6 flex-wrap justify-center gap-4 ${i % 2 === 0 ? "bg-base-200/20" : ""}`}>
-                        {el.members.map((member, index) => <div key={index} className="relative w-[380px] rounded-lg shadow-md p-4
+                        className={`${el.members.length === 4 ? 'grid grid-cols-1 sm:grid-cols-2 gap-4 p-6 w-full max-w-[820px] mx-auto' : 'flex w-full p-6 flex-wrap justify-center gap-4'}`}>
+                        {el.members.map((member, index) => <div key={index} className="relative w-full max-w-[380px] rounded-lg shadow-md p-4
                     flex items-center gap-3 hover:shadow-lg origin-center transition-all duration-200 bg-base-100">
                             <img
                                 src={member.image}

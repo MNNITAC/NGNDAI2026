@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from "react-router-dom";
-import Footer from "../components/Footer.jsx";
+import SummaryFooter from "../components/SummaryComponents/SummaryFooter.jsx";
 import SummaryNavbar from "../components/SummaryComponents/SummaryNavbar.jsx";
 import About from "../components/SummaryComponents/AboutConference.jsx";
 import SpeakerCarousel from "../components/SummaryComponents/SpeakerCarousel.jsx"
@@ -38,7 +38,7 @@ const SummaryRoot = () => {
                     <NewspaperCarousel/>
                 </main>
             </div>
-            <Footer />
+            <SummaryFooter />
         </main>
     );
 };
