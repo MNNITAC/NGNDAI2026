@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 // Swiper Imports
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Keyboard, Mousewheel, Autoplay } from "swiper/modules";
+import { Pagination, Keyboard, Autoplay } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Swiper Styles
 import "swiper/css";
@@ -43,8 +44,9 @@ const images = [
   img24, img25, img26, img27, img28, img29,
 ];
 
-const NewspaperCarousel = () => {
+const MediaCoverage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const swiperRef = useRef(null);
   const closeZoom = () => setSelectedImage(null);
 
   return (
@@ -54,15 +56,33 @@ const NewspaperCarousel = () => {
       className="flex flex-col rounded-md shadow-sm text-base-content w-full bg-base-200/40 py-8"
     >
       {/* 1. Heading Container - Constrained Width */}
-      <div className="w-full max-w-[1100px] mx-auto px-4 mb-2">
+      <div className="w-full max-w-[1100px] mx-auto px-4 mb-0 flex flex-col md:flex-row items-center justify-between gap-3">
         <h2 className="text-4xl font-bold text-primary font-playfair">
           Media Coverage
         </h2>
+
+        <div className="flex gap-3">
+          <button
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="px-3 py-1.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition flex items-center justify-center"
+            aria-label="Previous media"
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          <button
+            onClick={() => swiperRef.current?.slideNext()}
+            className="px-3 py-1.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition flex items-center justify-center"
+            aria-label="Next media"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
       </div>
 
       {/* 2. Carousel Container - Full Width */}
       <div className="w-full">
-        <div className="relative w-full overflow-hidden bg-gray-100">
+  <div className="relative w-full overflow-hidden">
           <style>{`
           .news-swiper-container {
             width: 100%;
@@ -109,6 +129,8 @@ const NewspaperCarousel = () => {
             transform: scale(1.05);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             z-index: 10;
+            border: 5px solid #6014a7; /* purple-500 */
+            border-radius: 5px;
           }
 
           .clipping-card img {
@@ -121,12 +143,13 @@ const NewspaperCarousel = () => {
         `}</style>
 
           <Swiper
-            modules={[Pagination, Keyboard, Mousewheel, Autoplay]}
+            modules={[Pagination, Keyboard, Autoplay]}
             // Added text-primary here so 'currentColor' in CSS picks up the heading color
             className="news-swiper-container text-primary"
+            onSwiper={(s) => (swiperRef.current = s)}
             slidesPerView={"auto"}
             centeredSlides={true}
-            spaceBetween={20}
+            spaceBetween={40}
             loop={true}
             autoplay={{
               delay: 3000,
@@ -135,7 +158,6 @@ const NewspaperCarousel = () => {
             }}
             pagination={{ clickable: true, dynamicBullets: true }}
             keyboard={{ enabled: true }}
-            mousewheel={true}
           >
             {images.map((img, i) => (
               <SwiperSlide key={i} className="variable-width-slide">
@@ -150,6 +172,20 @@ const NewspaperCarousel = () => {
           </Swiper>
         </div>
       </div>
+
+      {/* 🎥 Embedded YouTube Video - BELOW carousel */}
+      <div className="w-full max-w-[1100px] mx-auto px-4 mt-10">
+        <div className="relative w-full aspect-video overflow-hidden rounded-xl shadow-lg bg-black">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/CGdjz2TcFUc?autoplay=1&mute=1&playsinline=1&loop=1&playlist=CGdjz2TcFUc"
+            title="Media coverage video"
+            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+
 
       {/* Zoom Modal Overlay */}
       {selectedImage && (
@@ -177,4 +213,4 @@ const NewspaperCarousel = () => {
   );
 };
 
-export default NewspaperCarousel;
+export default MediaCoverage;
