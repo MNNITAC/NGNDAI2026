@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 // Swiper Imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Keyboard, Autoplay } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Swiper Styles
 import "swiper/css";
@@ -45,6 +46,7 @@ const images = [
 
 const MediaCoverage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const swiperRef = useRef(null);
   const closeZoom = () => setSelectedImage(null);
 
   return (
@@ -54,15 +56,33 @@ const MediaCoverage = () => {
       className="flex flex-col rounded-md shadow-sm text-base-content w-full bg-base-200/40 py-8"
     >
       {/* 1. Heading Container - Constrained Width */}
-      <div className="w-full max-w-[1100px] mx-auto px-4 mb-2">
+      <div className="w-full max-w-[1100px] mx-auto px-4 mb-0 flex flex-col md:flex-row items-center justify-between gap-3">
         <h2 className="text-4xl font-bold text-primary font-playfair">
           Media Coverage
         </h2>
+
+        <div className="flex gap-3">
+          <button
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="px-3 py-1.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition flex items-center justify-center"
+            aria-label="Previous media"
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          <button
+            onClick={() => swiperRef.current?.slideNext()}
+            className="px-3 py-1.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition flex items-center justify-center"
+            aria-label="Next media"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
       </div>
 
       {/* 2. Carousel Container - Full Width */}
       <div className="w-full">
-        <div className="relative w-full overflow-hidden bg-gray-200">
+  <div className="relative w-full overflow-hidden">
           <style>{`
           .news-swiper-container {
             width: 100%;
@@ -126,6 +146,7 @@ const MediaCoverage = () => {
             modules={[Pagination, Keyboard, Autoplay]}
             // Added text-primary here so 'currentColor' in CSS picks up the heading color
             className="news-swiper-container text-primary"
+            onSwiper={(s) => (swiperRef.current = s)}
             slidesPerView={"auto"}
             centeredSlides={true}
             spaceBetween={40}
