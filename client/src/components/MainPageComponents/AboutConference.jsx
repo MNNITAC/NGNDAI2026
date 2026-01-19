@@ -4,7 +4,7 @@ import mnnit from "../../assets/images/mnnit1.jpg"
 
 function About() {
     return (<section id="about conference"
-                     className="mb-8 flex-col rounded-md text-base-content w-full flex items-center">
+                     className="pt-6 mb-8 flex-col rounded-md text-base-content w-full flex items-center">
         <div className="max-w-[1100px]">
             <h2
                 className="text-center text-primary text-4xl font-bold leading-normal mb-2 lg:text-start font-playfair">
