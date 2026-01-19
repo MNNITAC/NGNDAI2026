@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+
 
 const speakersData = [
-
   {
     id: 1,
     name: "Prof. Ram Bilas Pachori",
     role: "IIT Indore, Indore, India",
-    bio: "Discussed the growing importance of adaptive signal decomposition techniques for analyzing non-stationary signals. Explored methods inspired by empirical mode decomposition, including empirical wavelet transform and iterative filtering, along with their extensions to multichannel signal processing. Presented frameworks combining multivariate EWT, iterative filtering, and machine learning for brain disease diagnosis using EEG signals, demonstrating effectiveness in conditions such as epilepsy and schizophrenia.",
+    bio: "Discussed the growing importance of adaptive signal decomposition techniques for analyzing non-stationary signals...",
     image: new URL("../../assets/images/SummeryKeynotes/ram_bilas_pachori.jpg", import.meta.url).href,
     linkedinUrl: "https://linkedin.com",
   },
@@ -15,7 +15,7 @@ const speakersData = [
     id: 2,
     name: "Dr. Aditya Nigam",
     role: "IIT Mandi, Mandi, India",
-    bio: "Focused on the evolution of foundational AI models such as GPT, DinoV2, and SAM and their impact on modern AI. The session highlighted parameter-efficient fine-tuning techniques like Adapters, LoRA, and QLoRA. It also focused on enabling efficient and scalable deployment of large models under computational constraints.",
+    bio: "Focused on the evolution of foundational AI models such as GPT, DinoV2, and SAM and their impact...",
     image: new URL("../../assets/images/SummeryKeynotes/aditya_nigam.jpg", import.meta.url).href,
     linkedinUrl: "https://linkedin.com",
   },
@@ -23,7 +23,7 @@ const speakersData = [
     id: 3,
     name: "Mr. Mehul Aggarwal",
     role: "Practice Head-AI Division, ERS, HCLTech",
-    bio: "Discussed the challenges of moving AI solutions from proof-of-concept to reliable, 24/7 production deployments in real customer environments. Explored the importance of building and deploying responsible AI, addressing concerns such as bias, ethics, and regulatory compliance with frameworks like NIST AI RMF, the EU AI Act, and ISO guidelines. Highlighted structured validation approaches, field issue anticipation, and evaluation methods, along with the tools and metrics required to make AI and GenAI applications deployment-ready.",
+    bio: "Discussed the challenges of moving AI solutions from proof-of-concept to reliable deployments...",
     image: new URL("../../assets/images/SummeryKeynotes/mehul_aggarwal.jpg", import.meta.url).href,
     linkedinUrl: "https://linkedin.com",
   },
@@ -31,7 +31,7 @@ const speakersData = [
     id: 4,
     name: "Mr. Anurag Pandey",
     role: "Capability Head, Computer Vision, HCLTech, Noida",
-    bio: "Highlighted the role of Reinforcement Learning in enabling hyper-personalized systems through continuous real-time learning. Explored the transition from static, rule-based approaches to adaptive models. Discussed applications in healthcare and e-commerce that deliver more responsive and user-centric experiences.",
+    bio: "Highlighted the role of Reinforcement Learning in enabling hyper-personalized systems...",
     image: new URL("../../assets/images/SummeryKeynotes/anurag_pandey.jpg", import.meta.url).href,
     linkedinUrl: "https://linkedin.com",
   },
@@ -39,7 +39,7 @@ const speakersData = [
     id: 5,
     name: "Mr. Manish Bajpai",
     role: "COO & Head-Products, Nivetti Systems",
-    bio: "Disussed about the critical role of networks in powering modern digital innovation and AI, particularly in connecting distributed GPU clusters for fast inference. The talk explored how the rise of agentic and edge AI is expanding networking beyond data centers to LAN, WAN, and broadband infrastructures. It also provided market-driven insights into how networks will evolve for AI and by AI in the emerging AI era.",
+    bio: "Discussed the critical role of networks in powering modern digital innovation and AI...",
     image: new URL("../../assets/images/SummeryKeynotes/manish_bajpai.jpg", import.meta.url).href,
     linkedinUrl: "https://linkedin.com",
   },
@@ -47,7 +47,7 @@ const speakersData = [
     id: 6,
     name: "Prof. Girija Chetty",
     role: "University of Canberra, Australia",
-    bio: "Explored multimodal generative AI and its ability to unify text, images, audio, and video within a single framework. Presented research on integrating multimodal and agentic generative AI to build autonomous systems. Highlighted AI agents capable of perception, reasoning, planning, and adaptation across complex environments.",
+    bio: "Explored multimodal generative AI and its ability to unify text, images, audio, and video...",
     image: new URL("../../assets/images/SummeryKeynotes/girija_chetty.jpg", import.meta.url).href,
     linkedinUrl: "https://linkedin.com",
   },
@@ -55,15 +55,15 @@ const speakersData = [
     id: 7,
     name: "Prof. Sukumar Nandi",
     role: "IIT Guwahati, Guwahati, India",
-    bio: "Highlighted the evolution of Device-to-Device (D2D) communication and its role in supporting V2X, IoT, and immersive AR/VR systems through direct device links. Explored challenges in device discovery and resource allocation, presenting hybrid discovery models, adaptive probing, and cooperative network-assisted mechanisms. Examined the vision of AI-native 6G networks, highlighting AI-driven transmission, scheduling, reliability, mobility management, and the use of digital twins for closed-loop optimization enabling ultra-high performance next-generation networks.",
+    bio: "Highlighted the evolution of Device-to-Device communication and its role in 6G networks...",
     image: new URL("../../assets/images/SummeryKeynotes/sukumar_nandi.jpg", import.meta.url).href,
     linkedinUrl: "https://linkedin.com",
   },
-    {
+  {
     id: 8,
     name: "Prof. P. N. Suganthan",
     role: "Qatar University, Qatar",
-    bio: "Discussed randomization-based feedforward learning paradigms that offer closed-form solutions for efficient model training. Covered methods such as random vector functional link neural networks, random weight neural networks, extreme learning machines, stochastic configuration networks, and broad learning systems, including deep RVFL implementations. Presented insights on hyperparameter tuning along with extensive benchmarking results on classification and forecasting datasets.",
+    bio: "Discussed randomization-based feedforward learning paradigms for efficient model training...",
     image: "/api/placeholder/800/600",
     linkedinUrl: "https://linkedin.com",
   },
@@ -77,7 +77,7 @@ const SpeakerCarousel = () => {
   const tabsRef = useRef(null);
   const itemsRef = useRef([]);
 
-  // 2. Carousel Interval
+  // 2. Carousel Interval (auto change speaker)
   useEffect(() => {
     let interval;
     if (!isPaused) {
@@ -88,14 +88,13 @@ const SpeakerCarousel = () => {
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  // 3. Auto-Scroll Logic
+  // 3. Auto-Scroll Logic (center active name button)
   useEffect(() => {
     if (tabsRef.current && itemsRef.current[activeIndex]) {
       const tabContainer = tabsRef.current;
       const activeTab = itemsRef.current[activeIndex];
 
       // Calculate the scroll position to center the active tab
-      // Formula: (Tab's Left Offset) - (Half of Container Width) + (Half of Tab Width)
       const scrollPos =
         activeTab.offsetLeft -
         tabContainer.clientWidth / 2 +
@@ -126,21 +125,46 @@ const SpeakerCarousel = () => {
       `}</style>
 
       <div className="w-full max-w-[1100px]">
-        <h2 className="text-center text-primary text-4xl font-bold leading-normal mb-8 lg:text-start font-playfair">
+        <h2 className="text-center text-primary text-4xl font-bold leading-normal mb-6 lg:text-start font-playfair">
           Keynote Speakers
         </h2>
 
+        {/* Navigation Buttons */}
+        <div className="flex justify-end gap-3 mb-3">
+          <button
+            onClick={() =>
+              setActiveIndex((prev) =>
+                (prev - 1 + speakersData.length) % speakersData.length
+              )
+            }
+            className="px-3 py-1.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition flex items-center justify-center"
+            aria-label="Previous speaker"
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          <button
+            onClick={() =>
+              setActiveIndex((prev) => (prev + 1) % speakersData.length)
+            }
+            className="px-3 py-1.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition flex items-center justify-center"
+            aria-label="Next speaker"
+          >
+            <ChevronRight size={20} />
+          </button>
+
+        </div>
+
         {/* Scrollable Navigation Bar */}
         <div
-          ref={tabsRef} // Attached Ref to Container
+          ref={tabsRef}
           className="
             flex 
             w-full 
             overflow-x-auto 
             whitespace-nowrap 
-            gap-8 
+            gap-3 
             mb-8 
-            border-b border-gray-200 
             pb-2 
             hide-scrollbar
             scroll-smooth
@@ -149,19 +173,15 @@ const SpeakerCarousel = () => {
           {speakersData.map((speaker, index) => (
             <button
               key={speaker.id}
-              ref={(el) => (itemsRef.current[index] = el)} // Store ref for each button
+              ref={(el) => (itemsRef.current[index] = el)}
               onClick={() => setActiveIndex(index)}
-              className={`
-                text-lg font-medium transition-all duration-300 pb-2 relative flex-shrink-0
-                ${activeIndex === index ? "text-gray-900" : "text-gray-400 hover:text-gray-600"}
-              `}
+              className={`px-4 py-2 rounded-full border transition-all duration-300 flex-shrink-0
+                ${activeIndex === index
+                  ? "bg-gray-900 text-white border-gray-900 shadow-md scale-105"
+                  : "bg-white text-gray-500 border-gray-300 hover:bg-gray-100 hover:text-gray-800"
+                }`}
             >
               {speaker.name}
-              <span
-                className={`absolute bottom-[-9px] left-0 h-0.5 bg-gray-800 transition-all duration-300
-                  ${activeIndex === index ? "w-full" : "w-0"}
-                `}
-              />
             </button>
           ))}
         </div>
