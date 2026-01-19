@@ -4,6 +4,7 @@ import AboutPrayagraj from "../components/MyCityPageComponents/AboutPrayagraj.js
 import AboutUttarPradesh from "../components/MyCityPageComponents/AboutUttarPradesh.jsx";
 import Publication from "../components/PaperSubmissionPageComponents/Publication.jsx";
 import TrackListing from "../components/MainPageComponents/TrackListing.jsx";
+import TimeLine from "../components/MainPageComponents/TimeLine.jsx";
 
 const MainContentPage = () => {
 
@@ -17,7 +18,7 @@ const MainContentPage = () => {
         {/*</div>*/}
         <About/>
         <TrackListing/>
-        {/*<Timeline/>*/}
+        <TimeLine/>
         <Publication/>
         {/*<Sponsors/>*/}
         <AboutPrayagraj/>
