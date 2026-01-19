@@ -3,7 +3,7 @@ import {Link, NavLink, useLocation} from "react-router-dom";
 import {GoChevronDown} from "react-icons/go";
 import {AnimatePresence, motion} from "framer-motion";
 
-function Dropdown({el, prevPath}) {
+function Dropdown({el, prevPath, noUnderline, highlight}) {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrollInBounds, setIsScrollInBounds] = useState(true);
     const location = useLocation();  // Get current URL path
@@ -32,9 +32,15 @@ function Dropdown({el, prevPath}) {
 
     // Conditionally apply underline based on whether scroll is within bounds
     const underlineIfActive = ({isActive}) => {
+        if (noUnderline) return "";
         // Apply underline only if active and within scroll bounds
         return isActive && isScrollInBounds ? "transition-all border-secondary border-b-2 font-medium" : "";
     };
+
+    // Highlight class for special nav items (theme-aware)
+    const highlightClass = highlight
+        ? 'bg-primary text-base-100 rounded-md px-3 py-1 shadow-sm hover:bg-transparent hover:text-base-content transition-colors'
+        : '';
 
     return (<div className="relative h-full *:text-nowrap  w-full">
         {el.element ?
@@ -45,7 +51,7 @@ function Dropdown({el, prevPath}) {
                 onMouseOut={() => setIsOpen(false)}
                 onMouseOver={() => setIsOpen(true)}
                 tabIndex={0}
-                className={({isActive}) => `flex items-center h-full p-2 hover:bg-base-300/10 ${underlineIfActive({isActive})}`}
+                className={({isActive}) => `flex items-center h-full p-2 hover:bg-base-300/10 ${underlineIfActive({isActive})} ${highlightClass}`}
             >
                 {el.name}
                 <GoChevronDown/>
@@ -64,8 +70,8 @@ function Dropdown({el, prevPath}) {
                         <Dropdown key={el.link + subEl.link} el={subEl} prevPath={el.link}/>))}
                 </motion.ul>)}
             </AnimatePresence>
-        </>) : el.link.charAt(0) === '#' ? (<a
-            className="block w-full rounded-md p-2 hover:bg-base-300/20 hover:shadow-sm"
+            </>) : el.link.charAt(0) === '#' ? (<a
+            className={`block w-full rounded-md p-2 hover:bg-base-300/20 hover:shadow-sm ${highlightClass}`}
             href={prevPath + el.link}
             onClick={() => {
                 document.getElementById("nav-side-bar").checked = false;
@@ -74,7 +80,7 @@ function Dropdown({el, prevPath}) {
             {el.name}
         </a>) : prevPath === "" ? (<NavLink
             to={el.link}
-            className={({isActive}) => `flex items-center h-full p-2 hover:bg-base-300/20 ${underlineIfActive({isActive})}`}
+            className={({isActive}) => `flex items-center h-full p-2 hover:bg-base-300/20 ${underlineIfActive({isActive})} ${highlightClass}`}
             onClick={() => {
 
                 document.getElementById("nav-side-bar").checked = false;
@@ -82,7 +88,7 @@ function Dropdown({el, prevPath}) {
             {el.name}
         </NavLink>) : (<Link
             to={el.link}
-            className="flex items-center h-full p-2 hover:bg-base-300/20"
+            className={`flex items-center h-full p-2 hover:bg-base-300/20 ${highlightClass}`}
             href={prevPath + el.link}
             onClick={() => {
 
