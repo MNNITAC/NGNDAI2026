@@ -28,7 +28,7 @@ const SummaryNavbar = () => {
     },
     {
         name: "Glossary",
-        link: "",
+        link: "/2025/glossary",
         prevPath: "",
     },
     {

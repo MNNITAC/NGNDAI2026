@@ -19,6 +19,7 @@ import DownloadSchedulePage from "./pages/DownloadSchedulePage.jsx";
 import MentorshipSessionPage from "./pages/MentorshipSession.jsx";
 import ConferenceImagesPage from "./pages/conferenceImages.jsx";
 import SummaryRoot from "./pages/SummaryRoot.jsx";
+import SummaryIndex from "./pages/SummaryIndex.jsx";
 
 function App() {
     const router = createBrowserRouter([
@@ -71,9 +72,6 @@ function App() {
                                 path: "MentorshipSession",
                                 element: <MentorshipSessionPage/>
                             }, {
-                                path: "conferenceImages",
-                                element: <ConferenceImagesPage/>
-                            }, {
                                 path: "PaperSubmissionGuidelines",
                                 element: <PaperSubmissionPage/>
                             }
@@ -83,12 +81,16 @@ function App() {
             },{
                 path: "/2025/",
                 element : <SummaryRoot/>,
-                // children : [
-                //     {
-                //         path : "test",
-                //         element: <CarouselPage/>,
-                //     }
-                // ],
+                children: [
+                    {
+                        index: true,
+                        element: <SummaryIndex />
+                    },
+                    {
+                        path: "glossary",
+                        element: <ConferenceImagesPage/>,
+                    }
+                ],
             },
         ]);
 

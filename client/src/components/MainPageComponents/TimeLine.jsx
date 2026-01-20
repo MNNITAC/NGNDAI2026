@@ -37,7 +37,7 @@ const Timeline = () => {
       id: 4,
       date: "24th-26th September 2026",
       title: "NGNDAI-2026 Conference Dates",
-      description: "Dates of NGANDAI conference",
+      description: "Dates of NGNDAI conference",
       icon: Users,
       bgColor: "bg-[#cda68e]",
       borderColor: "border-amber-900",
