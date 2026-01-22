@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { useLocation } from "react-router-dom";
-import Footer from "../components/Footer.jsx";
+import { Outlet, useLocation } from "react-router-dom";
+import SummaryFooter from "../components/SummaryComponents/SummaryFooter.jsx";
 import SummaryNavbar from "../components/SummaryComponents/SummaryNavbar.jsx";
 import About from "../components/SummaryComponents/AboutConference.jsx";
 import SpeakerCarousel from "../components/SummaryComponents/SpeakerCarousel.jsx"
 import Sponsors from '../components/SummaryComponents/Sponsors.jsx';
-import NewspaperCarousel from '../components/SummaryComponents/NewpaperCarousel.jsx';
+import MediaCoverage from '../components/SummaryComponents/MediaCoverage.jsx';
+import ConferenceImagesPage from './conferenceImages.jsx';
 const SummaryRoot = () => {
 
     const location = useLocation();
@@ -32,13 +33,31 @@ const SummaryRoot = () => {
             <SummaryNavbar />
             <div className="w-full grow bg-base-100">
                 <main className="flex w-full flex-col items-center justify-center align-middle">
-                    <About />
-                    <SpeakerCarousel/>
-                    <Sponsors/>
-                    <NewspaperCarousel/>
+                    <Outlet />
                 </main>
             </div>
-            <Footer />
+            <SummaryFooter />
+        </main>
+    );
+
+    return (
+        <main className="flex w-full flex-col items-center justify-center align-middle">
+            <SummaryNavbar />
+            <div className="w-full grow bg-base-100">
+                <main className="flex w-full flex-col items-center justify-center align-middle">
+                    {isGlossary ? (
+                        <ConferenceImagesPage />
+                    ) : (
+                        <> 
+                            <About />
+                            <SpeakerCarousel/>
+                            <Sponsors/>
+                            <MediaCoverage/>
+                        </>
+                    )}
+                </main>
+            </div>
+            <SummaryFooter />
         </main>
     );
 };

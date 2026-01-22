@@ -1,8 +1,8 @@
 import React from "react";
 
-import logo from "../assets/images/MNNIT logo.png"
+import logo from "../../assets/images/MNNIT logo.png"
 
-function Footer() {
+function SummaryFooter() {
     return (
         <footer
             className="footer  bg-base-200 text-base-content p-10 pb-0 gap-4 flex flex-col items-center mt-4 sm:mt-0 scroll-mt-16"
@@ -13,7 +13,7 @@ function Footer() {
                 <div className="flex gap-4 md:px-4 py-4 ">
                     <img className="max-w-20" src={logo} alt="logo"/>
                     <div>
-                        <p className="underline">TEAM NGNDAI 2026</p>
+                        <p className="underline">TEAM NGNDAI 2025</p>
                         <p className="text-xs text-base-content/80">Department of Computer Science and Engineering</p>
                         <p className="mt-1 text-xs text-base-content/80">
                             Motilal Nehru National Institute of Technology, Allahabad
@@ -55,7 +55,7 @@ function Footer() {
                          src="https://s11.flagcounter.com/count2/ghnE/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
                          alt="Flag Counter" border="0"/>
                 </a>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+                <p>Copyright © {2025} - All right reserved</p>
                 {/*<div className="flex items-center justify-center gap-2 align-middle">*/}
                 {/*    <a className="flex items-center justify-center rounded-full border p-2 align-middle bg-base-300"*/}
                 {/*       href=""><FaXTwitter size={20}/></a>*/}
@@ -72,4 +72,4 @@ function Footer() {
     )
 }
 
-export default Footer;
+export default SummaryFooter;

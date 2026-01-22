@@ -17,6 +17,7 @@ const Navbar = () => {
       scrollLowerLimit: 400,
       sublinks: [
         { name: "About Conference", link: "/#about%20conference" }, // {name: "Timeline", link: "/#timeline"},
+        { name: "Timeline", link: "/#timeline" },
         { name: "Publication", link: "/#publication" },
         {
           name: "About Prayagraj",
