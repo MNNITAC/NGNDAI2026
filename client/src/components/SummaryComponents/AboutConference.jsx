@@ -1,10 +1,9 @@
 import React from "react";
 import mnnit from "../../assets/images/mnnit1.jpg";
+import abs from "../../assets/documents/abstract.pdf"
+import sch from "../../assets/documents/schedule.pdf"
 
 function About() {
-  const openPdf = (path) => {
-    window.open(path, "_blank", "noopener,noreferrer");
-  };
 
   return (
     <section
@@ -27,9 +26,8 @@ function About() {
           <p>
             The Department of Computer Science and Engineering, Motilal Nehru
             National Institute of Technology (MNNIT), Allahabad successfully
-            hosted the
-            <span className="font-medium text-white">
-              International Conference on Next-Generation Networks and
+            hosted the 
+            <span className="font-medium text-white"> International Conference on Next-Generation Networks and
               Deployable Artificial Intelligence (NGNDAI-2025)
             </span>
             from{" "}
@@ -91,7 +89,7 @@ function About() {
         {/* Badges: outline by default, filled on hover */}
          <div className="mt-6 flex flex-wrap gap-10 justify-center">
           <div
-            onClick={() => openPdf("/src/assets/documents/schedule.pdf")}
+            onClick={() => window.open(sch, "_blank")}
             className="inline-flex items-center justify-center px-6 py-2 rounded-full border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-800 transition-colors duration-200 ease-in-out shadow-none hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white/40"
             aria-label="Program Schedule"
           >
@@ -99,7 +97,7 @@ function About() {
           </div>
 
           <div
-            onClick={() => openPdf("/src/assets/documents/abstract.pdf")}
+            onClick={() => window.open(abs, "_blank")}
             className="inline-flex items-center justify-center px-6 py-2 rounded-full border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-800 transition-colors duration-200 ease-in-out shadow-none hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white/40"
             aria-label="Book of Abstracts"
           >
