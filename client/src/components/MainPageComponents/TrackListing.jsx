@@ -30,7 +30,7 @@ function TrackListing() {
             ]
         }, {
             trackNumber: "2",
-            trackHeading: "Software-Defined Smart Computer Networks",
+            trackHeading: "Next Generation Networking Technologies",
             points: [
                 "Architectures for Software Defined Networking (SDN) in Smart Networks",
                 "Network Function Virtualization (NFV) and its Role in Smart Networks",
@@ -96,7 +96,7 @@ function TrackListing() {
                         <div className="w-full md:columns-3 text-sm">
                             {data.map((el, i) => (
                                 <div key={el.trackNumber ?? i} className="p-4 bg-base-200/20 border px-6 rounded-lg  break-inside-avoid mb-4">
-                                    <h2 className="font-medium underline mb-2 ">Track <span className="">{i + 1} :</span>{el.trackHeading}</h2>
+                                    <h2 className="font-medium underline mb-2 ">Track <span className="">{el.trackNumber}: </span>{el.trackHeading}</h2>
                                     <ul className="list-disc">
                                         {el.points.map((p, idx) => (
                                             <li key={`${el.trackNumber ?? i}-${idx}`} className="text-justify">{p}</li>
