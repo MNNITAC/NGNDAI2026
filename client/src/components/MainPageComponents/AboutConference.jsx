@@ -51,8 +51,7 @@ function About() {
                         be limited to:</p>
                     <p><span className="font-medium underline">Track 1:</span> Artificial Intelligence and
                         Machine Learning</p>
-                    <p><span className="font-medium underline">Track 2:</span> Software Defined Smart
-                        Computer Networks</p>
+                    <p><span className="font-medium underline">Track 2:</span> Next Generation Networking Technologies</p>
                     <p><span className="font-medium underline">Track 3:</span> Cognitive Computing and
                         Brain-Inspired Systems</p>
                     <p><span className="font-medium underline">Track 4:</span> Quantum Computing and
