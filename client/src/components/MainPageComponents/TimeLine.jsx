@@ -15,7 +15,7 @@ const Timeline = () => {
     },
     {
       id: 2,
-      date: "15th April 2026",
+      date: "30th April 2026",
       title: "Notification of Acceptance",
       description: "Notifications of acceptance will be released by this date",
       icon: Bell,
@@ -25,7 +25,7 @@ const Timeline = () => {
     },
     {
       id: 3,
-      date: "01st May 2026",
+      date: "15th May 2026",
       title: "Author's Registration",
       description: "Last date for author registration",
       icon: UserCheck,
