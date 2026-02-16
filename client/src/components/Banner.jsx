@@ -1,5 +1,7 @@
 import React from "react";
 import Carousal from "./Miscellaneous/Carousal.jsx";
+import callForPaper from "./../assets/documents/NGNDAICFP2026.pdf";
+import {GrDocumentPdf} from "react-icons/gr";
 
 function Banner() {
     return <div
@@ -70,6 +72,13 @@ function Banner() {
             {/*    </div>*/}
 
             {/*</div>*/}
+
+            {/* <div className="flex md:flex-row flex-col text-xl justify-center items-center align-middle gap-5 mt-4">
+                <div onClick={() => window.open(callForPaper, "_blank")}
+                     className="btn btn-outline border-[3px] border-red-600 bg-white text-black hover:bg-neutral-200 hover:text-black  ">Call for
+                    Papers <GrDocumentPdf />
+                </div>
+            </div> */}
 
         </div>
     </div>;
