@@ -93,9 +93,9 @@ function TrackListing() {
             <h1 className="mb-8 text-4xl font-bold text-primary font-playfair">Conference Tracks</h1>
 
 
-                        <div className="w-full md:columns-3 text-sm">
+                        <div className="w-full flex flex-col md:columns-3 md:block text-sm">
                             {data.map((el, i) => (
-                                <div key={el.trackNumber ?? i} className="p-4 bg-base-200/20 border px-6 rounded-lg  break-inside-avoid mb-4">
+                                <div key={el.trackNumber ?? i} style={{ order: el.trackNumber }} className="p-4 bg-base-200/20 border px-6 rounded-lg break-inside-avoid mb-4 md:!order-none">
                                     <h2 className="font-medium underline mb-2 ">Track <span className="">{el.trackNumber}: </span>{el.trackHeading}</h2>
                                     <ul className="list-disc">
                                         {el.points.map((p, idx) => (
