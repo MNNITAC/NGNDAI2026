@@ -31,10 +31,35 @@ function Dropdown({el, prevPath, noUnderline, highlight}) {
     }, [el.scrollLowerLimit, el.scrollUpperLimit]);
 
     // Conditionally apply underline based on whether scroll is within bounds
+    // Use the current location and the item's `el.link` to avoid NavLink's partial-match/hash issues
     const underlineIfActive = ({isActive}) => {
         if (noUnderline) return "";
-        // Apply underline only if active and within scroll bounds
-        return isActive && isScrollInBounds ? "transition-all border-secondary border-b-2 font-medium" : "";
+
+        const to = el.link || "";
+
+        // If link is an absolute route with optional hash, require exact pathname and matching hash (if present)
+        if (to.startsWith("/")) {
+            const [path, hashPart] = to.split("#");
+            if (location.pathname !== path) return "";
+            if (hashPart) {
+                // If scroll bounds are defined, use scroll position to determine active state
+                // (e.g. "About" should underline on scroll even without the hash in the URL)
+                if (el.scrollLowerLimit !== undefined) {
+                    return isScrollInBounds ? "transition-all border-primary border-b-2 font-medium" : "";
+                }
+                const expectedHash = `#${hashPart}`;
+                return (location.hash === expectedHash && isScrollInBounds) ? "transition-all border-primary border-b-2 font-medium" : "";
+            }
+            // no hash: require exact pathname match
+            return (location.pathname === path && isScrollInBounds) ? "transition-all border-primary border-b-2 font-medium" : "";
+        }
+        // If link is a hash only (anchor on same page)
+        if (to.startsWith("#")) {
+            return (location.hash === to && isScrollInBounds) ? "transition-all border-primary border-b-2 font-medium" : "";
+        }
+
+        // Fallback to NavLink's isActive result
+        return (isActive && isScrollInBounds) ? "transition-all border-primary border-b-2 font-medium" : "";
     };
 
     // Highlight class for special nav items (theme-aware)
