@@ -3,7 +3,7 @@ import logo from "../assets/images/MNNIT logo.png";
 import Dropdown from "./NavbarComponents/Dropdown.jsx";
 import Accessability from "./NavbarComponents/Accessability.jsx";
 import { IoCloseCircleOutline, IoMenu } from "react-icons/io5";
-import callForPaper from "../assets/documents/NGNDAICFP2026.pdf";
+// import callForPaper from "../assets/documents/NGNDAICFP2026.pdf";
 
 
 const Navbar = () => {
@@ -82,17 +82,17 @@ const Navbar = () => {
       name: "Registration",
       link: "/registration",
     },
-    {
-      name: "Call for Paper",
-      element: (
-        <div
-          onClick={() => window.open(callForPaper, "_blank")}
-          className="flex items-center h-full p-2 hover:bg-base-300/20 cursor-pointer"
-        >
-          Call for Paper
-        </div>
-      ),
-    },
+    // {
+    //   name: "Call for Paper",
+    //   element: (
+    //     <div
+    //       onClick={() => window.open(callForPaper, "_blank")}
+    //       className="flex items-center h-full p-2 hover:bg-base-300/20 cursor-pointer"
+    //     >
+    //       Call for Paper
+    //     </div>
+    //   ),
+    // },
     {
       name: "Past Events",
       link: "/2025",
