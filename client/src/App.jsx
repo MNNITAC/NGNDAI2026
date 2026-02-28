@@ -20,6 +20,7 @@ import MentorshipSessionPage from "./pages/MentorshipSession.jsx";
 import ConferenceImagesPage from "./pages/conferenceImages.jsx";
 import SummaryRoot from "./pages/SummaryRoot.jsx";
 import SummaryIndex from "./pages/SummaryIndex.jsx";
+import { ngndai2025Routes } from "./pages/past/NGNDAI2025/Routes.jsx";
 
 function App() {
     const router = createBrowserRouter([
@@ -79,7 +80,7 @@ function App() {
                     }
                 ],
             },{
-                path: "/2025/",
+                path: "/2025/glimpse/",
                 element : <SummaryRoot/>,
                 children: [
                     {
@@ -91,6 +92,10 @@ function App() {
                         element: <ConferenceImagesPage/>,
                     }
                 ],
+            },
+            {
+                path: "/2025/*",
+                children: ngndai2025Routes,
             },
         ]);
 

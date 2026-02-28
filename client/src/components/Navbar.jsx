@@ -95,14 +95,16 @@ const Navbar = () => {
     // },
     {
       name: "Past Events",
-      link: "/2025",
+      link: "#",
       scrollLowerLimit: 400,
-      sublinks: [{ name: "NGNDAI-2025", link: "/2025" }],
+      sublinks: [
+        { name: "NGNDAI-2025", link: "/2025" },
+        { name: "NGNDAI-2025 Glimpse", link: "/2025/glimpse" }
+      ],
     },
     {
       name: "Contact Us",
-      link: "#footer",
-      prevPath: "",
+      link: "/#footer",
     },
   ];
 
