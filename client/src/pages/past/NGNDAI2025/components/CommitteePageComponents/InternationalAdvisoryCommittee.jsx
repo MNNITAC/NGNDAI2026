@@ -1,0 +1,230 @@
+import React from "react";
+
+import an
+    from "../../assets/images/International Advisory Committee compressed/Dr. Anand Nayyar, DUY TAN University.jpeg";
+import lg from "../../assets/images/International Advisory Committee/Dr. Lalit Garg, University of Malta.jpeg"
+import mp_ntu from "../../assets/images/International Advisory Committee compressed/Dr. Mahardhika Pratama, NTU.jpeg"
+import mhb from "../../assets/images/International Advisory Committee/Dr. Monowar H. Bhuyan.jpg.webp"
+import mp
+    from "../../assets/images/International Advisory Committee compressed/Dr. Mukesh Prasad, University of Technology Sydney.jpeg"
+import pt
+    from "../../assets/images/International Advisory Committee compressed/Dr. Prayag Tiwari, Halmstad University.jpeg"
+import akg
+    from "../../assets/images/International Advisory Committee compressed/Prof. Ajay K Gupta, Western Michigan University Kalamazoo.jpg"
+import kd from "../../assets/images/International Advisory Committee/kd.jpeg";
+import bu
+    from "../../assets/images/International Advisory Committee compressed/Prof. Bhuvan Unhelkar, University of South Florida Sarasota-Manatee.jpg"
+import dks from "../../assets/images/International Advisory Committee compressed/Prof. Dinesh K. Sharma, UMES, USA.jpeg"
+import gc
+    from "../../assets/images/International Advisory Committee compressed/Prof. Girija Chetty, University of Canberra.jpeg"
+import gb
+    from "../../assets/images/International Advisory Committee compressed/Prof. Gnana Bharathy, University of Technology Sydney.jpeg"
+import mlm
+    from "../../assets/images/International Advisory Committee compressed/Prof. Michael L. Mcguire, University In Victoria.jpg"
+import rp
+    from "../../assets/images/International Advisory Committee compressed/Prof. Rustem Popa, University In Galati, Domneasca.jpg"
+import pns from "../../assets/images/Organising Committee/Prof. P. N. Suganthan, Qatar University, Qatar.jpg";
+import wp from "../../assets/images/International Advisory Committee/wp.jpg";
+import ks
+    from "../../assets/images/International Advisory Committee compressed/Dr. Koushik Sinha, Southern Illinois University.jpeg";
+import veb from "../../assets/images/International Advisory Committee/Prof. Valentina Emilia Balas.jpeg"
+import mj from "../../assets/images/International Advisory Committee/mj.jpg"
+import us from "../../assets/images/International Advisory Committee/us.jpg"
+
+import {GoLinkExternal} from "react-icons/go";
+
+
+function InternationalAdvisoryCommittee() {
+    const boardMembers = [
+        {
+            name: "Prof. P.N. Suganthan",
+            university: "Qatar University, Qatar",
+            image: pns,
+            homepage: "https://www3.ntu.edu.sg/home/epnsugan/"
+        },{
+            name: "Prof. Witold Pedrycz",
+            university: "University of Alberta, Canada",
+            image: wp,
+            homepage: "https://apps.ualberta.ca/directory/person/wpedrycz"
+        },
+        // {
+        //     name: "Prof. Chin-Teng Lin",
+        //     university: "University of Technology, Sydney, Australia",
+        //     image: ctl,
+        //     homepage: "https://protect-au.mimecast.com/s/BuwbCgZ0kVUGPlXmFNGd_x?domain=uts-cibci.center"
+        // },
+        {
+            name: "Prof. Girija Chetty",
+            university: "University of Canberra, Australia",
+            image: gc,
+            homepage: "https://researchprofiles.canberra.edu.au/en/persons/girija-chetty"
+        },
+        // {
+        //     name: "Prof. Yenumula Reddy",
+        //     university: "Grambling State University, USA",
+        //     image: yr,
+        //     homepage: "https://www.gram.edu/academics/majors/arts-and-sciences/compsci/docs/DrReddy.pdf"
+        // },
+        {
+            name: "Prof. Kalyanmoy Deb",
+            university: "Michigan State University, USA",
+            image: kd,
+            homepage: "http://www.egr.msu.edu/~kdeb"
+        },
+        {
+            name: "Dr. Mahardhika Pratama",
+            university: "NTU, Singapore",
+            image: mp_ntu,
+            homepage: "https://people.unisa.edu.au/Dhika.Pratama"
+        },
+        {
+            name: "Dr. Monowar Bhuyan",
+            university: "Umeå University, Sweden",
+            image: mhb,
+            homepage: "https://people.cs.umu.se/monowar/"
+        },
+        {
+            name: "Prof. Dinesh K. Sharma",
+            university: "UMES, USA",
+            image: dks,
+            homepage: "https://www.researchgate.net/profile/Dinesh-Sharma-65"
+        },
+        // {
+        //     name: "Prof. Kai-Lung Hua",
+        //     university: "NTUST, Taiwan",
+        //     image: klh,
+        //     homepage: "https://www.csie.ntust.edu.tw/p/405-1038-23649,c1815.php?Lang=en"
+        // },
+        {
+            name: "Prof. Bhuvan Unhelkar",
+            university: "University of South Florida Sarasota-Manatee, USA",
+            image: bu,
+            homepage: "https://www.usf.edu/business/about/bios/unhelkar-bhuvanesh.aspx"
+        },
+        {
+            name: "Dr. Anand Nayyar",
+            university: "DUY TAN University, Vietnam",
+            image: an,
+            homepage: "http://www.anandnayyar.com/"
+        },
+        // {
+        //     name: "Prof. Roshan D. Yapa",
+        //     university: "University of Peradeniya, Sri Lanka",
+        //     image: rdy,
+        //     homepage: "https://sci.pdn.ac.lk/scs/staff/Roshan-Yapa"
+        // },
+        // {
+        //     name: "Prof. Dimitrios Koukopoulos",
+        //     university: "University of Patras, Greece",
+        //     image: dk,
+        //     homepage: "https://www.researchgate.net/profile/Dimitrios-Koukopoulos"
+        // },
+        {
+            name: "Prof. Rustem Popa",
+            university: "University In Galati, Domneasca, Romania",
+            image: rp,
+            homepage: "https://www.intechopen.com/profiles/112519"
+        },
+        {
+            name: "Prof. Ajay K Gupta",
+            university: "Western Michigan University Kalamazoo, USA",
+            image: akg,
+            homepage: "https://www.cs.wmich.edu/~gupta/"
+        },
+        {
+            name: "Dr. Mukesh Prasad",
+            university: "University of Technology Sydney, Australia",
+            image: mp,
+            homepage: "https://www.uts.edu.au/staff/mukesh.prasad"
+        },
+        {
+            name: "Dr. Prayag Tiwari",
+            university: "Halmstad University, Sweden",
+            image: pt,
+            homepage: "https://prayagtiwari.github.io/"
+        },
+        {
+            name: "Prof. Michael L. Mcguire",
+            university: "University In Victoria, Canada",
+            image: mlm,
+            homepage: "https://www.uvic.ca/ecs/ece/faculty-and-staff/home/faculty/mcguiremichael-l..php"
+        },
+        // {
+        //     name: "Prof. A. R. Rababaah",
+        //     university: "American University of Kuwait, Kuwait",
+        //     image: arr,
+        //     homepage: "http://www.auk.edu.kw/academics/cas/CSIS/CSIS_f_Aaron_Rababaah.jsp"
+        // },
+        {
+            name: "Dr. Lalit Garg",
+            university: "University of Malta",
+            image: lg,
+            homepage: "https://www.um.edu.mt/profile/lalitgarg"
+        },
+        // {
+        //     name: "Prof. Tadahiko Murata",
+        //     university: "Kansai University, Japan",
+        //     image: tm,
+        //     homepage: "https://www.ist.osaka-u.ac.jp/english/researcher/detail.php?id=148"
+        // },
+        {
+            name: "Prof. Gnana Bharathy",
+            university: "University of Technology Sydney, Australia",
+            image: gb,
+            homepage: "https://profiles.uts.edu.au/Gnana.Bharathy"
+        },{
+            name: "Dr. Koushik Sinha",
+            university: "Southern Illinois University, Carbondale",
+            image: ks,
+            homepage: "http://cs.siu.edu/~ksinha"
+        },{
+            name: "Prof. Valentina Emilia Balas",
+            university: "Faculty of Engineering, University of Arad, Romania",
+            image: veb,
+            homepage: "https://www.drbalas.ro/valentina-emilia"
+        },{
+            name: "Prof. Meena Jha",
+            university: "Central Queensland University, Australia",
+            image: mj,
+            homepage: "https://staff-profiles.cqu.edu.au/home/view/1248"
+        },{
+            name: "Prof. Upasana Singh",
+            university: "University of KwaZulu-Natal, Durban",
+            image: us,
+            homepage: "https://smitg.ukzn.ac.za/academic-staff/professor-upasana-singh/"
+        }
+    ];
+
+
+    return (<section
+        id="International Advisory Committee"
+        className="mb-8 flex-col rounded-md text-base-content w-full flex items-center py-4">
+
+        <div className="max-w-[1100px]"><h2
+            className="mb-8 text-4xl font-bold  text-primary font-playfair text-center">International Advisory
+            Committee</h2>
+            <div className="flex flex-row flex-wrap gap-5 justify-center">
+                {boardMembers.map(member =>
+                    <div
+                        className="flex gap-4 shadow-sm p-4 w-full max-w-[350px] relative bg-base-200/50 hover:shadow-md transition-all duration-300"
+                        key={member.name}>
+                        <div className="avatar">
+                            <div className="w-16 rounded">
+                                <img src={member.image} alt={member.name}/>
+                            </div>
+                        </div>
+                        <div>
+                            <p className="text-lg font-medium">{member.name}</p>
+                            <p className="text-sm">{member.university}</p>
+                        </div>
+                        <a className="absolute top-0 right-0 translate-y-1/2 -translate-x-1/2" href={member.homepage}
+                           target="_blank"><GoLinkExternal
+                            size={20}/></a>
+                    </div>
+                )}
+            </div>
+        </div>
+    </section>)
+}
+
+export default InternationalAdvisoryCommittee;

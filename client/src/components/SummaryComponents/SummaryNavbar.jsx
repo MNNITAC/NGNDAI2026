@@ -8,27 +8,27 @@ const SummaryNavbar = () => {
   const navItems = [
     {
       name: "About",
-      link: "/2025/",
+      link: "/2025/glimpse",
       scrollUpperLimit: 400 - 1,
     },
     {
       name: "Keynote Speakers",
-      link: "/2025/#keynote-speakers",
+      link: "/2025/glimpse/#keynote-speakers",
       scrollLowerLimit: 200,
     },
     {
         name: "Sponsors",
-        link: "/2025/#sponsors",
+        link: "/2025/glimpse/#sponsors",
         prevPath: "",
     },
     {
         name: "Media Coverage",
-        link: "/2025/#media-coverage",
+        link: "/2025/glimpse/#media-coverage",
         prevPath: "",
     },
     {
         name: "Glossary",
-        link: "/2025/glossary",
+        link: "/2025/glimpse/glossary",
         prevPath: "",
     },
     {
@@ -39,7 +39,7 @@ const SummaryNavbar = () => {
     },
     {
       name: "Contact Us",
-      link: "/2025/#footer",
+      link: "/2025/glimpse/#footer",
       prevPath: "",
     },
 
