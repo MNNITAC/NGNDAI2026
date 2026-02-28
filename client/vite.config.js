@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3006,
   },
   base: '/',
-  assetsInclude: ['**/*.JPG', '**/*.JPEG'], // Add support for uppercase image extensions
+  assetsInclude: ['**/*.JPG', '**/*.JPEG', "**/*.zip"], // Add support for uppercase image extensions
   define: {
     global: 'window', // Fix for react-image-lightbox
   },
