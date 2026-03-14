@@ -84,7 +84,7 @@ function RegistrationPage() {
                     <div>
                         <h3 className="text-xl font-medium underline mb-4">Registration Procedure</h3>
                         <p>
-                            All participants are requested to register online at <a target="_blank" className="text-blue-800 underline" href="https://forms.gle/YhL6b3sz8aXy1o8P6">https://forms.gle/YhL6b3sz8aXy1o8P6</a>.
+                            All participants are requested to register online at <a target="_blank" className="text-blue-800 underline" href="https://forms.gle/gwse2DCMTj5dtMGZ7">https://forms.gle/gwse2DCMTj5dtMGZ7</a>.
                             The Participants should submit the filled registration form along with an electronic
                             receipt.
                             Please mention NGNDAI 2026 in transaction remarks.
