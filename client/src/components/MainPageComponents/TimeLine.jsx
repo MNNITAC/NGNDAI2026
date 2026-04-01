@@ -5,7 +5,8 @@ const Timeline = () => {
   const events = [
     {
       id: 1,
-      date: "31st March 2026",
+      originalDate: "31st March 2026",
+      newDate: "3oth April 2026 Round 2",
       title: "Paper Submission Deadline",
       description: "Last date for paper submission",
       icon: Clock,
@@ -15,7 +16,8 @@ const Timeline = () => {
     },
     {
       id: 2,
-      date: "30th April 2026",
+      originalDate: "30th April 2026",
+      newDate: "30th May 2026 Round 2",
       title: "Notification of Acceptance",
       description: "Notifications of acceptance will be released by this date",
       icon: Bell,
@@ -25,7 +27,8 @@ const Timeline = () => {
     },
     {
       id: 3,
-      date: "15th May 2026",
+      originalDate: "15th May 2026",
+      newDate: "10th June 2026 Round 2",
       title: "Author's Registration",
       description: "Last date for author registration",
       icon: UserCheck,
@@ -78,7 +81,15 @@ const Timeline = () => {
                       className={`${event.bgColor} p-4 rounded-lg shadow-md flex-1 transition-transform hover:-translate-y-0.5`}
                     >
                       <h3 className="font-bold text-slate-800 text-base leading-tight mb-1">
-                        {event.date}
+                        {event.date ? (
+                          <span className="font-bold">{event.date}</span>
+                        ) : (
+                          <>
+                            <span className="line-through text-gray-500 font-bold">{event.originalDate}</span>
+                            <br />
+                            <span className="text-black font-bold">{event.newDate}</span>
+                          </>
+                        )}
                       </h3>
                       <h4 className="font-semibold text-slate-800 text-sm leading-tight mb-1 opacity-90">
                         {event.title}
@@ -122,7 +133,15 @@ const Timeline = () => {
                             className={`${event.bgColor} p-6 rounded-lg shadow-md w-72 min-h-[160px] flex flex-col justify-center text-left transition-transform hover:-translate-y-1 relative z-10`}
                           >
                             <h3 className="font-bold text-slate-800 text-lg leading-tight mb-2">
-                              {event.date}
+                              {event.date ? (
+                                <span className="font-bold">{event.date}</span>
+                              ) : (
+                                <>
+                                  <span className="line-through text-gray-500 font-bold">{event.originalDate}</span>
+                                  <br />
+                                  <span className="text-black font-bold">{event.newDate}</span>
+                                </>
+                              )}
                             </h3>
                             <h4 className="font-semibold text-slate-800 text-base leading-tight mb-2 opacity-90">
                               {event.title}
@@ -161,7 +180,15 @@ const Timeline = () => {
                             className={`${event.bgColor} p-6 rounded-lg shadow-md w-72 min-h-[160px] flex flex-col justify-center text-left transition-transform hover:translate-y-1 relative z-10`}
                           >
                             <h3 className="font-bold text-slate-800 text-lg leading-tight mb-2">
-                              {event.date}
+                              {event.date ? (
+                                <span className="font-bold">{event.date}</span>
+                              ) : (
+                                <>
+                                  <span className="line-through text-gray-500 font-bold">{event.originalDate}</span>
+                                  <br />
+                                  <span className="text-black font-bold">{event.newDate}</span>
+                                </>
+                              )}
                             </h3>
                             <h4 className="font-semibold text-slate-800 text-base leading-tight mb-2 opacity-90">
                               {event.title}
