@@ -6,7 +6,7 @@ const Timeline = () => {
     {
       id: 1,
       originalDate: "31st March 2026",
-      newDate: "3oth April 2026 (Round-II)",
+      newDate: "30th April 2026 (Round-II)",
       title: "Paper Submission Deadline",
       description: "Last date for paper submission",
       icon: Clock,
