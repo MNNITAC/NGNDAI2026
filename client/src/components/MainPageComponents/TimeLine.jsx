@@ -6,7 +6,7 @@ const Timeline = () => {
     {
       id: 1,
       originalDate: "31st March 2026",
-      newDate: "3oth April 2026 Round 2",
+      newDate: "3oth April 2026 (Round-II)",
       title: "Paper Submission Deadline",
       description: "Last date for paper submission",
       icon: Clock,
@@ -17,7 +17,7 @@ const Timeline = () => {
     {
       id: 2,
       originalDate: "30th April 2026",
-      newDate: "30th May 2026 Round 2",
+      newDate: "30th May 2026 (Round-II)",
       title: "Notification of Acceptance",
       description: "Notifications of acceptance will be released by this date",
       icon: Bell,
@@ -28,7 +28,7 @@ const Timeline = () => {
     {
       id: 3,
       originalDate: "15th May 2026",
-      newDate: "10th June 2026 Round 2",
+      newDate: "10th June 2026 (Round-II)",
       title: "Author's Registration",
       description: "Last date for author registration",
       icon: UserCheck,
