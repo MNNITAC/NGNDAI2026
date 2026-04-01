@@ -1,7 +1,7 @@
 import React from "react";
 import Carousal from "./Miscellaneous/Carousal.jsx";
 
-import cfp from "../assets/documents/CFP NGNDAI-2026.pdf";
+import cfp from "../assets/documents/NGNDAI-2026-CFP-Round-II.pdf";
 import { useNavigate } from "react-router-dom";
 
 
