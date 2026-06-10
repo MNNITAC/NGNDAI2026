@@ -15,7 +15,7 @@ function Publication() {
                         The 2<sup>nd</sup> International Conference on Next-Generation Networks and Deployable Artificial Intelligence
                         (NGNDAI-2026) proceedings will be published as Springer book series “Lecture Notes in Networks
                         and Systems” (https://www.springer.com/series/15179) (indexed in Web of Science, SCOPUS, etc.).
-                        <b> (Approval Pending)</b>
+                        <b> (Approved)</b>
                     </p>
                     {/*<p>*/}
                     {/*    Selected and extended versions of research papers will be forwarded for publication as a Special*/}
