@@ -44,7 +44,7 @@ function OrganisingCommittee() {
             image: rsv,
             about: <><u>Director</u>, MNNIT Allahabad, India</>,
             role: "Chief Patron",
-            homepage: "https://www.mnnit.ac.in/index.php/institute/437-profile-prof-rs-verma"
+            homepage: "https://mnnit.ac.in/index.php/institute/administration/director"
         }]
     }, {
         members: [{
