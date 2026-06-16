@@ -1,43 +1,43 @@
 import React from "react";
-import rsv from "../../assets/images/Organising Committee/Prof. Rama Shanker Verma.jpeg"
-import mmg from "../../assets/images/Organising Committee/Prof. M. M. Gore.png"
-import mp from "../../assets/images/Organising Committee/Prof. Mayank Pandey.jpg"
-import dg from "../../assets/images/Organising Committee/62037-Deepak Gupta MNNIT.jpg"
-import pns from "../../assets/images/Organising Committee/Prof. P. N. Suganthan, Qatar University, Qatar.jpg"
-import as from "../../assets/images/Archive3 compressed/Dr. Abhimanyu Sahu, MNNIT Allahabad, India.jpg";
-import ak from "../../assets/images/Archive3 compressed/Dr. Abhinav Kumar.jpg";
-import ab from "../../assets/images/Archive3/Dr. Amit Biswas, MNNIT Allahabad, India.png";
-import ak2 from "../../assets/images/Archive3 compressed/Dr. Anoj Kumar, MNNIT Allahabad, India.jpg";
-import akm from "../../assets/images/Archive3 compressed/Dr. Ashish Kumar Maurya.jpg";
-import dk from "../../assets/images/Archive3 compressed/Dr. Dushyant Kumar Singh, MNNIT.jpg";
-import id from "../../assets/images/Archive3 compressed/Dr. Indu Dohare, MNNIT Allahabad, India.jpg";
-import jc from "../../assets/images/Archive3 compressed/Dr. Joohi Chauhan, MNNIT Allahabad, India.jpg";
-import kw from "../../assets/images/Archive3/Dr. Kailash W. Kalare.png";
-import ms from "../../assets/images/Archive3 compressed/Dr. Mandhatya Singh, Vanix Technology, Pvt., India.jpg";
-import mw from "../../assets/images/Archive3 compressed/Dr. Manoj Wariya, MNNIT Allahabad, India.jpeg";
-import pd from "../../assets/images/Archive3 compressed/Dr. Pragya Dwivedi, MNNIT Allahabad, India.jpg";
-import rb from "../../assets/images/Archive3 compressed/Dr. Rajitha B, MNNIT Allahabad, India.jpg";
-import r from "../../assets/images/Archive3 compressed/Dr. Ranvijay, MNNIT Allahabad, India.jpg";
-import st from "../../assets/images/Archive3 compressed/Dr. Sarsij Tripathi, MNNIT Allahabad, India.jpg";
-import ss from "../../assets/images/Archive3 compressed/Dr. Shailendra Shukla, MNNIT Allahabad, India.jpeg";
-import ss2 from "../../assets/images/Archive3/Dr. Shashank Srivastava, MNNIT Allahabad, India.png";
-import vps from "../../assets/images/Archive3 compressed/Dr. Vibhav Prakash Singh, MNNIT Allahabad, India.jpg";
-import dk2 from "../../assets/images/Archive3 compressed/Lieutenant (Dr.) Divya Kumar, MNNIT Allahabad, India.jpeg";
-import aks from "../../assets/images/Archive3 compressed/aks.jpeg";
-import rsy from "../../assets/images/Archive3 compressed/Prof. Rama Shankar Yadav.jpeg";
-import dky from "../../assets/images/Archive3 compressed/Dharmendra Kumar Yadav.jpg";
-import dsk from "../../assets/images/Archive3 compressed/Prof. Dharmender Singh Kushwaha.jpg";
-import vs from "../../assets/images/Archive3/Dr. Vishal Srivastava.png";
-import ad from "../../assets/images/Archive3 compressed/Dr. Anuja Dixit.jpg";
-import ds from "../../assets/images/Archive3 compressed/Dinesh singh.jpg";
-import rd from "../../assets/images/Archive3/Dr. Rupesh K Dewang.jpg";
+import rsv from "../../../../../assets/images/Organising Committee/Prof. Umamaheshwar Rao.jpg"
+import mmg from "../../../../../assets/images/Organising Committee/Prof. M. M. Gore.png"
+import mp from "../../../../../assets/images/Organising Committee/Prof. Mayank Pandey.jpg"
+import dg from "../../../../../assets/images/Organising Committee/62037-Deepak Gupta MNNIT.jpg"
+import pns from "../../../../../assets/images/Organising Committee/Prof. P. N. Suganthan, Qatar University, Qatar.jpg"
+import as from "../../../../../assets/images/Archive3 compressed/Dr. Abhimanyu Sahu, MNNIT Allahabad, India.jpg";
+import ak from "../../../../../assets/images/Archive3 compressed/Dr. Abhinav Kumar.jpg";
+import ab from "../../../../../assets/images/Archive3/Dr. Amit Biswas, MNNIT Allahabad, India.png";
+import ak2 from "../../../../../assets/images/Archive3 compressed/Dr. Anoj Kumar, MNNIT Allahabad, India.jpg";
+import akm from "../../../../../assets/images/Archive3 compressed/Dr. Ashish Kumar Maurya.jpg";
+import dk from "../../../../../assets/images/Archive3 compressed/Dr. Dushyant Kumar Singh, MNNIT.jpg";
+import id from "../../../../../assets/images/Archive3 compressed/Dr. Indu Dohare, MNNIT Allahabad, India.jpg";
+import jc from "../../../../../assets/images/Archive3 compressed/Dr. Joohi Chauhan, MNNIT Allahabad, India.jpg";
+import kw from "../../../../../assets/images/Archive3/Dr. Kailash W. Kalare.png";
+import ms from "../../../../../assets/images/Archive3 compressed/Dr. Mandhatya Singh, Vanix Technology, Pvt., India.jpg";
+import mw from "../../../../../assets/images/Archive3 compressed/Dr. Manoj Wariya, MNNIT Allahabad, India.jpeg";
+import pd from "../../../../../assets/images/Archive3 compressed/Dr. Pragya Dwivedi, MNNIT Allahabad, India.jpg";
+import rb from "../../../../../assets/images/Archive3 compressed/Dr. Rajitha B, MNNIT Allahabad, India.jpg";
+import r from "../../../../../assets/images/Archive3 compressed/Dr. Ranvijay, MNNIT Allahabad, India.jpg";
+import st from "../../../../../assets/images/Archive3 compressed/Dr. Sarsij Tripathi, MNNIT Allahabad, India.jpg";
+import ss from "../../../../../assets/images/Archive3 compressed/Dr. Shailendra Shukla, MNNIT Allahabad, India.jpeg";
+import ss2 from "../../../../../assets/images/Archive3/Dr. Shashank Srivastava, MNNIT Allahabad, India.png";
+import vps from "../../../../../assets/images/Archive3 compressed/Dr. Vibhav Prakash Singh, MNNIT Allahabad, India.jpg";
+import dk2 from "../../../../../assets/images/Archive3 compressed/Lieutenant (Dr.) Divya Kumar, MNNIT Allahabad, India.jpeg";
+import aks from "../../../../../assets/images/Archive3 compressed/aks.jpeg";
+import rsy from "../../../../../assets/images/Archive3 compressed/Prof. Rama Shankar Yadav.jpeg";
+import dky from "../../../../../assets/images/Archive3 compressed/Dharmendra Kumar Yadav.jpg";
+import dsk from "../../../../../assets/images/Archive3 compressed/Prof. Dharmender Singh Kushwaha.jpg";
+import vs from "../../../../../assets/images/Archive3/Dr. Vishal Srivastava.png";
+import ad from "../../../../../assets/images/Archive3 compressed/Dr. Anuja Dixit.jpg";
+import ds from "../../../../../assets/images/Archive3 compressed/Dinesh singh.jpg";
+import rd from "../../../../../assets/images/Archive3/Dr. Rupesh K Dewang.jpg";
 
 
 function OrganisingCommittee() {
 
     const organisingCommittee = [{
         members: [{
-            name: "Prof. Rama Shanker Verma",
+            name: "Prof. Umamaheshwar Rao Karanam",
             image: rsv,
             about: <><u>Director</u>, MNNIT Allahabad, India</>,
             role: "Chief Patron",

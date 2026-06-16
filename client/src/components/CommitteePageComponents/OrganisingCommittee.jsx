@@ -1,5 +1,5 @@
 import React from "react";
-import rsv from "../../assets/images/Organising Committee/Prof. Rama Shanker Verma.jpeg"
+import rsv from "../../assets/images/Organising Committee/Prof. Umamaheshwar Rao.jpg"
 import mmg from "../../assets/images/Organising Committee/Prof. M. M. Gore.png"
 import mp from "../../assets/images/Organising Committee/Prof. Mayank Pandey.jpg"
 import dg from "../../assets/images/Organising Committee/62037-Deepak Gupta MNNIT.jpg"
@@ -40,7 +40,7 @@ function OrganisingCommittee() {
 
     const organisingCommittee = [{
         members: [{
-            name: "Prof. Rama Shanker Verma",
+            name: "Prof. Umamaheshwar Rao Karanam",
             image: rsv,
             about: <><u>Director</u>, MNNIT Allahabad, India</>,
             role: "Chief Patron",
