@@ -1,76 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { TbZoomScan } from "react-icons/tb";
 import { FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+const IMAGES_PER_BATCH = 20;
+
 function ConferenceImagesPage() {
     const [selectedDay, setSelectedDay] = useState('day1');
-    const [images, setImages] = useState([]);
+    const [allDayImages, setAllDayImages] = useState([]);
+    const [visibleImages, setVisibleImages] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
+    const [hasMore, setHasMore] = useState(true);
+    const [availableDays, setAvailableDays] = useState([]);
 
-    const imagesPerPage = 50;
-
-    // Dynamically import all images from the conferenceImages folder
-    const imageModules = import.meta.glob(
-        '../assets/images/conferenceImages/**/*.{png,jpg,jpeg,gif,JPG,JPEG}',
-        { eager: true }
-    );
-    
-    // Function to create a compressed thumbnail URL from the original image
-const createThumbnailUrl = (originalUrl) => {
-    return new Promise((resolve, reject) => {
-        const img = new Image();
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-
-        img.onload = () => {
-            try {
-                // Create reasonably sized thumbnails for fast loading but good clarity
-                const maxThumbnailSize = 500; // ⬅ increased from 150
-
-                let width = img.width;
-                let height = img.height;
-
-                // Calculate new dimensions maintaining aspect ratio
-                if (width > height) {
-                    if (width > maxThumbnailSize) {
-                        height *= maxThumbnailSize / width;
-                        width = maxThumbnailSize;
-                    }
-                } else {
-                    if (height > maxThumbnailSize) {
-                        width *= maxThumbnailSize / height;
-                        height = maxThumbnailSize;
-                    }
-                }
-
-                canvas.width = width;
-                canvas.height = height;
-
-                ctx.drawImage(img, 0, 0, width, height);
-
-                // Higher quality for sharper thumbnails
-                resolve(canvas.toDataURL('image/jpeg', 0.8)); // ⬅ increased from 0.6
-            } catch (error) {
-                console.error('Error creating thumbnail:', error);
-                reject(error);
-            }
-        };
-
-        img.onerror = () => {
-            console.error('Error loading image:', originalUrl);
-            reject(new Error('Failed to load image'));
-        };
-
-        img.src = originalUrl;
-    });
-};
+    const sentinelRef = useRef(null);
+    const batchIndexRef = useRef(0);
 
     // Random size presets for collage effect
     const sizePresets = [
@@ -86,87 +35,116 @@ const createThumbnailUrl = (originalUrl) => {
         "h-[28rem]"
     ];
 
-    // Function to get all images for the selected day
-    const getAllDayImages = () => {
-        const allDayImages = [];
-        for (const path in imageModules) {
-            if (path.includes(`/${selectedDay}/`)) {
-                allDayImages.push({
-                    src: imageModules[path].default,
-                    name: path.split('/').pop()
-                });
-            }
+    // Assign a deterministic random size based on image name (so it doesn't change on re-render)
+    const getSizeClass = useCallback((imageName) => {
+        let hash = 0;
+        for (let i = 0; i < imageName.length; i++) {
+            const char = imageName.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash |= 0;
         }
-        return allDayImages;
-    };
+        return sizePresets[Math.abs(hash) % sizePresets.length];
+    }, []);
 
+    // Fetch manifest on mount
     useEffect(() => {
-        const loadImages = async () => {
-            setIsLoading(true);
-            // Get all images for the selected day
-            const allDayImages = getAllDayImages();
-
-            // Calculate total pages
-            const calculatedTotalPages = Math.ceil(allDayImages.length / imagesPerPage);
-            setTotalPages(calculatedTotalPages);
-
-            // Reset to first page when day changes
-            setCurrentPage(1);
-
-            // Get current page's images
-            const startIndex = 0;
-            const endIndex = Math.min(imagesPerPage, allDayImages.length);
-            const currentPageImages = allDayImages.slice(startIndex, endIndex);
-
-            // Create compressed thumbnails for faster loading
-            const loadedImages = await Promise.all(
-                currentPageImages.map(async (image) => {
-                    try {
-                        const thumbnail = await createThumbnailUrl(image.src);
-                        return {
-                            ...image,
-                            thumbnail,
-                            sizeClass: sizePresets[Math.floor(Math.random() * sizePresets.length)]
-                        };
-                    } catch (error) {
-                        console.warn('Failed to create thumbnail for', image.name, error);
-                        return {
-                            ...image,
-                            thumbnail: image.src, // Fallback to original image
-                            sizeClass: sizePresets[Math.floor(Math.random() * sizePresets.length)]
-                        };
-                    }
-                })
-            );
-
-            setImages(loadedImages);
-            setIsLoading(false);
+        const fetchManifest = async () => {
+            try {
+                const response = await fetch('/conferenceImages/manifest.json');
+                const manifest = await response.json();
+                const days = Object.keys(manifest).sort();
+                setAvailableDays(days);
+                
+                // Load images for the initially selected day
+                if (manifest[selectedDay]) {
+                    const dayImages = manifest[selectedDay];
+                    setAllDayImages(dayImages);
+                    setVisibleImages(dayImages.slice(0, IMAGES_PER_BATCH));
+                    setHasMore(dayImages.length > IMAGES_PER_BATCH);
+                    batchIndexRef.current = 1;
+                }
+            } catch (error) {
+                console.error('Failed to load manifest:', error);
+            } finally {
+                setIsLoading(false);
+            }
         };
-        loadImages();
+        fetchManifest();
+    }, []);
+
+    // Handle day change
+    useEffect(() => {
+        const loadDay = async () => {
+            setIsLoading(true);
+            try {
+                const response = await fetch('/conferenceImages/manifest.json');
+                const manifest = await response.json();
+
+                if (manifest[selectedDay]) {
+                    const dayImages = manifest[selectedDay];
+                    setAllDayImages(dayImages);
+                    setVisibleImages(dayImages.slice(0, IMAGES_PER_BATCH));
+                    setHasMore(dayImages.length > IMAGES_PER_BATCH);
+                    batchIndexRef.current = 1;
+                } else {
+                    setAllDayImages([]);
+                    setVisibleImages([]);
+                    setHasMore(false);
+                }
+            } catch (error) {
+                console.error('Failed to load day images:', error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        loadDay();
     }, [selectedDay]);
 
+    // Load more images
+    const loadMore = useCallback(() => {
+        if (isLoadingMore || !hasMore) return;
+
+        setIsLoadingMore(true);
+        const nextIndex = batchIndexRef.current;
+        const start = nextIndex * IMAGES_PER_BATCH;
+        const end = Math.min(start + IMAGES_PER_BATCH, allDayImages.length);
+
+        if (start >= allDayImages.length) {
+            setHasMore(false);
+            setIsLoadingMore(false);
+            return;
+        }
+
+        // Small delay to show the loading animation briefly
+        setTimeout(() => {
+            const newImages = allDayImages.slice(start, end);
+            setVisibleImages(prev => [...prev, ...newImages]);
+            batchIndexRef.current = nextIndex + 1;
+            setHasMore(end < allDayImages.length);
+            setIsLoadingMore(false);
+        }, 200);
+    }, [allDayImages, hasMore, isLoadingMore]);
+
+    // Intersection Observer for infinite scroll
     useEffect(() => {
-        const loadPageImages = async () => {
-            setIsLoading(true);
-            // Get all images for the selected day
-            const allDayImages = getAllDayImages();
+        if (!sentinelRef.current) return;
 
-            // Get current page's images
-            const startIndex = (currentPage - 1) * imagesPerPage;
-            const endIndex = Math.min(startIndex + imagesPerPage, allDayImages.length);
-            const currentPageImages = allDayImages.slice(startIndex, endIndex);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting && hasMore && !isLoadingMore) {
+                    loadMore();
+                }
+            },
+            {
+                rootMargin: '400px', // Start loading 400px before the sentinel is visible
+                threshold: 0
+            }
+        );
 
-            // Assign random collage sizes
-            const loadedImages = currentPageImages.map(image => ({
-                ...image,
-                sizeClass: sizePresets[Math.floor(Math.random() * sizePresets.length)]
-            }));
+        observer.observe(sentinelRef.current);
 
-            setImages(loadedImages);
-            setIsLoading(false);
-        };
-        loadPageImages();
-    }, [currentPage]);
+        return () => observer.disconnect();
+    }, [loadMore, hasMore, isLoadingMore]);
 
     const handleDownload = (imageSrc, imageName) => {
         const link = document.createElement('a');
@@ -177,11 +155,10 @@ const createThumbnailUrl = (originalUrl) => {
         document.body.removeChild(link);
     };
 
-    const handlePageChange = (newPage) => {
-        if (newPage >= 1 && newPage <= totalPages) {
-            setCurrentPage(newPage);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    // Get the global index of an image in allDayImages for lightbox navigation
+    const getGlobalIndex = (visibleIndex) => {
+        const imageName = visibleImages[visibleIndex]?.name;
+        return allDayImages.findIndex(img => img.name === imageName);
     };
 
     return (
@@ -205,11 +182,28 @@ const createThumbnailUrl = (originalUrl) => {
                                 className="select select-primary w-full"
                                 disabled={isLoading}
                             >
-                                <option value="day1">Day 1</option>
-                                <option value="day2">Day 2</option>
-                                <option value="day3">Day 3</option>
+                                {availableDays.length > 0 ? (
+                                    availableDays.map(day => (
+                                        <option key={day} value={day}>
+                                            {day.replace('day', 'Day ')}
+                                        </option>
+                                    ))
+                                ) : (
+                                    <>
+                                        <option value="day1">Day 1</option>
+                                        <option value="day2">Day 2</option>
+                                        <option value="day3">Day 3</option>
+                                    </>
+                                )}
                             </select>
                         </div>
+
+                        {/* Image count */}
+                        {!isLoading && allDayImages.length > 0 && (
+                            <p className="text-sm text-gray-500">
+                                Showing {visibleImages.length} of {allDayImages.length} photos
+                            </p>
+                        )}
 
                         {/* Loading indicator */}
                         {isLoading && (
@@ -219,28 +213,28 @@ const createThumbnailUrl = (originalUrl) => {
                             </div>
                         )}
 
-                        {/* Image collage */}
+                        {/* Image collage - infinite scroll */}
                         {!isLoading && (
                             <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 w-full">
-                                {images.map((image, index) => (
+                                {visibleImages.map((image, index) => (
                                     <motion.div
-                                        key={index}
+                                        key={`${selectedDay}-${image.name}`}
                                         className="mb-4 break-inside-avoid relative group"
                                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                                         transition={{ duration: 0.4, ease: "easeOut" }}
                                         viewport={{ once: true }}
                                     >
-                                        {/* Image */}
-                                        <div className={`w-full overflow-hidden rounded-xl ${image.sizeClass}`}>
-                                            <motion.img
-                                                src={image.thumbnail || image.src}
+                                        {/* Image - uses tiny thumbnail */}
+                                        <div className={`w-full overflow-hidden rounded-xl ${getSizeClass(image.name)}`}>
+                                            <img
+                                                src={image.thumb}
                                                 alt={image.name}
                                                 loading="lazy"
                                                 className="w-full h-full object-cover cursor-pointer bg-base-300
                                                            hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
                                                 onClick={() => {
-                                                    setPhotoIndex(index);
+                                                    setPhotoIndex(getGlobalIndex(index));
                                                     setIsOpen(true);
                                                 }}
                                             />
@@ -254,7 +248,7 @@ const createThumbnailUrl = (originalUrl) => {
                                                 <button
                                                     className="btn btn-sm bg-white/80 backdrop-blur"
                                                     onClick={() => {
-                                                        setPhotoIndex(index);
+                                                        setPhotoIndex(getGlobalIndex(index));
                                                         setIsOpen(true);
                                                     }}
                                                 >
@@ -274,33 +268,29 @@ const createThumbnailUrl = (originalUrl) => {
                             </div>
                         )}
 
-                        {/* Pagination */}
-                        {!isLoading && totalPages > 1 && (
-                            <div className="flex justify-center gap-2 mt-4">
-                                <button
-                                    className={`btn btn-sm ${currentPage === 1 ? 'btn-disabled' : 'btn-primary'}`}
-                                    onClick={() => handlePageChange(currentPage - 1)}
-                                    disabled={currentPage === 1 || isLoading}
-                                >
-                                    Previous
-                                </button>
-                                <span className="flex items-center px-4">
-                                    Page {currentPage} of {totalPages}
-                                </span>
-                                <button
-                                    className={`btn btn-sm ${currentPage === totalPages ? 'btn-disabled' : 'btn-primary'}`}
-                                    onClick={() => handlePageChange(currentPage + 1)}
-                                    disabled={currentPage === totalPages || isLoading}
-                                >
-                                    Next
-                                </button>
+                        {/* Infinite scroll sentinel & loading more indicator */}
+                        {!isLoading && hasMore && (
+                            <div ref={sentinelRef} className="flex flex-col items-center justify-center w-full py-6">
+                                {isLoadingMore && (
+                                    <div className="flex items-center gap-3">
+                                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                                        <p className="text-gray-500">Loading more photos...</p>
+                                    </div>
+                                )}
                             </div>
                         )}
 
+                        {/* End of images message */}
+                        {!isLoading && !hasMore && visibleImages.length > 0 && (
+                            <p className="text-sm text-gray-400 py-4">
+                                You've seen all {allDayImages.length} photos ✨
+                            </p>
+                        )}
+
                         {/* Show message if no images found */}
-                        {!isLoading && images.length === 0 && (
+                        {!isLoading && visibleImages.length === 0 && (
                             <div className="text-center text-gray-500 my-8">
-                                No images found for {selectedDay}
+                                No images found for {selectedDay.replace('day', 'Day ')}
                             </div>
                         )}
 
@@ -308,12 +298,12 @@ const createThumbnailUrl = (originalUrl) => {
                 </div>
             </div>
 
-            {/* Lightbox for image preview */}
+            {/* Lightbox for image preview - uses FULL-RES images */}
             <Lightbox
                 open={isOpen}
                 close={() => setIsOpen(false)}
                 index={photoIndex}
-                slides={images.map(img => ({ src: img.src }))}
+                slides={allDayImages.map(img => ({ src: img.src }))}
             />
         </section>
     );
