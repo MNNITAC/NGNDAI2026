@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Conference images (too large for git, upload to server separately)
+public/conferenceImages/
