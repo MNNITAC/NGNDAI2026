@@ -19,13 +19,13 @@ const App = () => {
                 });
             }
         } else {
-            window.scrollTo({top: 1, behavior: "smooth"});
+            window.scrollTo({top: 0, behavior: "smooth"});
         }
     }, [location]);
 
     return (
         <>
-            {useLocation().pathname === "/" && <Banner/>}
+            {useLocation().pathname === "/2025" && <Banner/>}
             <div className="relative flex min-h-screen flex-col gap-5 rounded-md text-base-content items-center">
                 <div className="relative md:flex md:flex-row w-full px-2 md:px-0">
                     {/*<Sidebar activeSection={activeSection} sectionId={sectionId}/>*/}
