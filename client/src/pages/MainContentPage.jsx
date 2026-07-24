@@ -9,6 +9,13 @@ import TimeLine from "../components/MainPageComponents/TimeLine.jsx";
 const MainContentPage = () => {
 
     return (<main className="flex w-full flex-col items-center justify-center align-middle">
+        <div className="w-full overflow-hidden text-red-900 font-bold py-2 whitespace-nowrap relative">
+           <div onClick={()=>window.open("https://www.springer.com/series/15179", "_blank")} className="cursor-pointer inline-block pl-full animate-slide hover:[animation-play-state:paused]">
+               The Conference Proceedings of NGNDAI 2026 have been approved by Springer. It will be published in the
+               Lecture Notes in Networks and Systems (LNNS) series <a>https://www.springer.com/series/15179</a>, which is
+               indexed by Scopus.
+           </div>
+        </div>
         <About/>
         <TrackListing/>
         <TimeLine/>
