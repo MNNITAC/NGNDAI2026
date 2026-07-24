@@ -27,13 +27,6 @@ const App = () => {
 
     return (
         <>
-        <div className="w-full overflow-hidden text-red-900 font-bold py-2 whitespace-nowrap relative">
-           <div onClick={()=>window.open("https://www.springer.com/series/15179", "_blank")} className="cursor-pointer inline-block pl-full animate-slide hover:[animation-play-state:paused]">
-               The Conference Proceedings of NGNDAI 2025 have been approved by Springer. It will be published in the
-               Lecture Notes in Networks and Systems (LNNS) series <a>https://www.springer.com/series/15179</a>, which is
-               indexed by Scopus.
-           </div>
-        </div>
             {useLocation().pathname === "/" && <Banner/>}
             <div className="relative flex min-h-[50vh] flex-col gap-5 rounded-md text-base-content items-center">
                 <div className="relative md:flex md:flex-row w-full px-2 md:px-0">
