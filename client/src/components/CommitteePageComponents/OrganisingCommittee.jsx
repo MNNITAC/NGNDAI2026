@@ -259,12 +259,6 @@ function OrganisingCommittee() {
             about: "MNNIT Allahabad, India",
             role: "Local Organizing Committee",
             homepage: "https://mnnit.ac.in/profile/anujadixit"
-        },{
-            name: "Dr. Saugata Roy",
-            image: sr,
-            about: "MNNIT Allahabad, India",
-            role: "Local Organizing Committee",
-            homepage: "http://mnnit.ac.in/profile/sgtroy"
         }
     ]
     }];
