@@ -91,6 +91,28 @@ function RegistrationPage() {
                         </p>
                     </div>
 
+                    <div className="mt-6">
+                        <h3 className="text-xl font-medium underline mb-4">Refund & Cancellation Policy</h3>
+
+                        <p><strong>Registration fees are non-refundable</strong><br/>
+                            Conference registration covers costs that are committed well in advance (venue, publication processing, materials, and organisation). All registration fees, once paid, are completely non-refundable and non-transferable, except in the single case where the conference is cancelled in its entirety by the organisers.</p>
+
+                        <p><strong>Cancellation by the participant</strong><br/>
+                            If you cancel your participation, withdraw your paper, fail to attend, or are unable to present for any reason, no refund will be issued. This applies to all registration categories — including author and listener/attendee registrations — regardless of when the cancellation is requested.</p>
+
+                        <p><strong>Non-refundable charges</strong><br/>
+                            Bank charges, payment-gateway fees, currency-conversion charges, and applicable government taxes are levied by third parties and are non-refundable in all cases.</p>
+
+                        <p><strong>Duplicate & erroneous payments — If you were charged twice</strong><br/>
+                            If a technical error results in a duplicate or excess payment, the duplicate/excess amount will be refunded to the original payment method after verification. Please report such cases promptly with proof of payment.</p>
+
+                        <p><strong>Cancellation by the organisers</strong><br/>
+                            The only case in which fees are refunded is when the organisers cancel the conference in its entirety. Registered participants will be informed and the registration fee will be refunded. The physical conduct of the conference is subject to prevailing government guidelines and may move to an online-only mode; a change of mode is not a cancellation and does not entitle participants to a refund, as the technical programme and publication process continue. Bank, payment-gateway, currency-conversion, and applicable tax charges levied by third parties may not be recoverable even in this case.</p>
+
+                        <p><strong>How refunds are processed</strong><br/>
+                            Approved refunds are made to the original payment method within a reasonable period after approval, subject to the timelines of the payment gateway and banks involved.</p>
+                    </div>
+
 
                 </div>
             </div>
