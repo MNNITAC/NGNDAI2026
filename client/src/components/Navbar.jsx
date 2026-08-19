@@ -65,19 +65,24 @@ const Navbar = () => {
     {
       name: "Submission Guidelines",
       link: "/submissionGuidelines",
-    }, //     {
-    //     name: "Conference Program", link: "/schedule", sublinks: [
-    //         {name: "Timeline", link: "/schedule"},
-    //             {
-    //         name: "Keynote Speakers", link: "/schedule#Keynote"
-    //     }, {
-    //         name: "Industry Session", link: "/schedule#industrySession"
-    //     }, {
-    //         name: "Mentorship Session", link: "/MentorshipSession"
-    //     }, {name: "Accomodation", link: "accomodationPage"}, {
-    //         name: "Cultural Program", link: "culturalProgramPage"
-    //     }]
-    // },
+    },{
+        name: "Conference Program", link: "#", sublinks: [
+            // {name: "Timeline", link: "/schedule"},
+        //         {
+        //     name: "Keynote Speakers", link: "/schedule#Keynote"
+        // }, 
+        // {
+        //     name: "Industry Session", link: "/schedule#industrySession"
+        // }, 
+        // {
+        //     name: "Mentorship Session", link: "/MentorshipSession"
+        // }, 
+        {name: "Accomodation", link: "accomodationPage"}, 
+        // {
+            // name: "Cultural Program", link: "culturalProgramPage"
+        // }
+      ]
+    },
     {
       name: "Registration",
       link: "/registration",
