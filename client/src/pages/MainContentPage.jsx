@@ -5,6 +5,7 @@ import AboutUttarPradesh from "../components/MyCityPageComponents/AboutUttarPrad
 import Publication from "../components/PaperSubmissionPageComponents/Publication.jsx";
 import TrackListing from "../components/MainPageComponents/TrackListing.jsx";
 import TimeLine from "../components/MainPageComponents/TimeLine.jsx";
+import Sponsors from "../components/MainPageComponents/Sponsors.jsx";
 
 const MainContentPage = () => {
 
@@ -20,7 +21,7 @@ const MainContentPage = () => {
         <TrackListing/>
         <TimeLine/>
         <Publication/>
-        {/*<Sponsors/>*/}
+        <Sponsors/>
         <AboutPrayagraj/>
         <AboutUttarPradesh/>
     </main>);

@@ -7,7 +7,7 @@ function About() {
                      className="pt-6 mb-8 flex-col rounded-md text-base-content w-full flex items-center">
         <div className="max-w-[1100px]">
             <h2
-                className="text-center text-primary text-4xl font-bold leading-normal mb-2 lg:text-start font-playfair">
+                className="text-center text-primary text-4xl font-bold leading-normal mb-6 lg:text-start font-playfair">
                 About conference </h2>
             <div className="grid w-full grid-cols-1 items-center justify-start gap-8 lg:grid-cols-[2fr_1fr]">
                 <div className="text-justify text-base font-normal *:mb-3">

@@ -42,7 +42,7 @@ const AboutUttarPradesh = () => {
             id="About Uttar Pradesh"
             className=" flex-col rounded-md shadow-sm text-base-content w-full flex items-center lg:p-8">
 
-            <div className="max-w-[1100px]"><h2 className="text-4xl font-playfair font-bold  text-primary">About Uttar
+            <div className="max-w-[1100px]"><h2 className="text-center text-primary text-4xl font-bold leading-normal mb-6 lg:text-start font-playfair">About Uttar
                 Pradesh</h2>
 
                 <div className="grid items-center gap-8 md:grid-cols-2">

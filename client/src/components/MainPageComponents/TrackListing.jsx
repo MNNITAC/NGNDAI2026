@@ -90,7 +90,7 @@ function TrackListing() {
         className="flex-col rounded-md shadow-sm lg:p-8 bg-base-200/40 text-base-content w-full flex items-center">
 
         <div className="max-w-[1100px]">
-            <h1 className="mb-8 text-4xl font-bold text-primary font-playfair">Conference Tracks</h1>
+            <h1 className="text-center text-primary text-4xl font-bold leading-normal mb-6 lg:text-start font-playfair">Conference Tracks</h1>
 
 
                         <div className="w-full flex flex-col md:columns-3 md:block text-sm">
