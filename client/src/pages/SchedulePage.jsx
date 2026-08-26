@@ -7,7 +7,7 @@ function SchedulePage() {
     return (<main className="flex w-full flex-col items-center justify-center align-middle">
         <i/>
         <KeynoteSpeakers/>
-        <IndustrySession/>
+        {/* <IndustrySession/> */}
     </main>)
 }
 

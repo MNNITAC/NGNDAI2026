@@ -68,9 +68,9 @@ const Navbar = () => {
     },{
         name: "Conference Program", link: "#", sublinks: [
             // {name: "Timeline", link: "/schedule"},
-        //         {
-        //     name: "Keynote Speakers", link: "/schedule#Keynote"
-        // }, 
+                {
+            name: "Keynote Speakers", link: "/schedule#Keynote"
+        }, 
         // {
         //     name: "Industry Session", link: "/schedule#industrySession"
         // }, 

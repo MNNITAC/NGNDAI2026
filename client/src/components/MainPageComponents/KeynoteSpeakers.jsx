@@ -2,13 +2,14 @@ import React from "react";
 import {motion} from "framer-motion";
 
 import epnsugan from "../../assets/images/KeynoteSpeakers/epnsugan.jpg"
-import aditya_nigam from "../../assets/images/KeynoteSpeakers/aditya_nigam.jpg"
-import Manish_Bajpai from "../../assets/images/KeynoteSpeakers/Manish_Bajpai.jpg"
-import Mehul_Agarwal from "../../assets/images/KeynoteSpeakers/Mehul_Agarwal.png"
-import sukumar from "../../assets/images/KeynoteSpeakers/sukumar.png"
 import ap from "../../assets/images/KeynoteSpeakers/Mr. Anurag Pandey.jpg"
 import gc from "../../assets/images/KeynoteSpeakers/Prof. Girija Chetty.jpg"
-import rbp from "../../assets/images/KeynoteSpeakers/Prof._Ram_Bilash_Pachori.png"
+import as from "../../assets/images/KeynoteSpeakers/Prof. Abhishek Srivastava.png"
+import ajk from "../../assets/images/KeynoteSpeakers/Mr. Ajay Kumar Sharma.jpg"
+import ak from "../../assets/images/KeynoteSpeakers/Mr. Ashok Kumar.jpg"
+import aks from "../../assets/images/KeynoteSpeakers/Prof. Ashutosh Kumar Singh.jpg"
+import dpv from "../../assets/images/KeynoteSpeakers/Prof. Deo Prakash Vidyarthi.png"
+
 
 
 function KeynoteSpeakers() {
@@ -18,42 +19,49 @@ function KeynoteSpeakers() {
         image: epnsugan,
         about: "Professor, Qatar University, Qatar",
         homepage: "https://www3.ntu.edu.sg/home/epnsugan/"
-    }, {
-        name: "Prof. Ram Bilash Pachori",
-        image: rbp,
-        about: "Professor, IIT Indore",
-        homepage: "https://people.iiti.ac.in/~pachori/"
-    }, {
-        name: "Dr. Aditya Nigam",
-        image: aditya_nigam,
-        about: "Associate Professor, IIT Mandi",
-        homepage: "https://faculty.iitmandi.ac.in/~aditya/"
-    }, {
-        name: "Mr. Mehul Agarwal",
-        image: Mehul_Agarwal,
-        about: "Practice Head – AITech, HCLTech",
-        homepage: "https://www.linkedin.com/in/mehulag/"
-    }, {
-        name: "Mr. Manish Bajpai",
-        image: Manish_Bajpai,
-        about: "COO & Head-Products, Nivetti Systems",
-        homepage: "https://www.linkedin.com/in/manish-bajpai-83387b3/"
-    }, {
-        name: "Mr. Anurag Pandey",
-        image: ap,
-        about: "Capability Head Computer Vision, HCLTech, Noida",
-        homepage: "https://www.linkedin.com/in/anurag-pandey-5244b885/"
-    }, {
+    },
+    {
         name: "Prof. Girija Chetty",
         image: gc,
         about: "University of Canberra, Australia",
         homepage: "https://www.linkedin.com/in/girija-chetty-680542227/"
-    }, {
-        name: "Prof. Sukumar Nandi",
-        image: sukumar,
-        about: "Professor, IIT Guwahati",
-        homepage: "https://www.iitg.ac.in/sukumar/"
-    }];
+    }, 
+    {
+        name: "Prof. Abhishek Srivastava",
+        image: as,
+        about: "IIT Indore",
+        homepage: "https://people.iiti.ac.in/~asrivastava/work%20exp.html"
+    }, 
+    {
+        name: "Mr. Ajay Kumar Sharma",
+        image: ajk,
+        about: "ERS, HCL Tech",
+        homepage: "https://www.linkedin.com/in/ajay-k-sharma/"
+    }, 
+    {
+        name: "Mr. Ashok Kumar",
+        image: ak,
+        about: "Deputy Director General, Department of Telecommunications",
+        homepage: "https://www.linkedin.com/in/ashok100/"
+    }, 
+    {
+        name: "Prof. Ashutosh Kumar Singh",
+        image: aks,
+        about: "Director, IIIT Bhopal",
+        homepage: "https://scholar.google.com/citations?user=1pBXMOgAAAAJ&hl=en"
+    }, 
+    {
+        name: "Prof. Deo Prakash Vidyarthi",
+        image: dpv,
+        about: "JNU, New Delhi",
+        homepage: "https://www.jnu.ac.in/scss-lab05-dpvidyarthi"
+    }, 
+    {
+        name: "Mr. Anurag Pandey",
+        image: ap,
+        about: "Capability Head Computer Vision, HCLTech, Noida",
+        homepage: "https://www.linkedin.com/in/anurag-pandey-5244b885/"
+    },];
 
 
     return (<section
