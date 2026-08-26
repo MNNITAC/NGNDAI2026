@@ -26,7 +26,7 @@ function AboutPrayagraj() {
         <div className="max-w-[1100px]">
 
 
-            <h2 className="mb-8 text-4xl font-bold text-primary font-playfair">About Prayagraj</h2>
+            <h2 className="text-center text-primary text-4xl font-bold leading-normal mb-6 lg:text-start font-playfair">About Prayagraj</h2>
 
             <p className="mb-8 text-justify font-normal leading-relaxed">Allahabad,
                 officially known as Prayagraj, is a city rich in history and culture, located at the confluence of the
