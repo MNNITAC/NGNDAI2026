@@ -1,158 +1,140 @@
-import jig from "../../src/assets/images/StudentCommittee/jigyasu.jpeg"
-import sha from "../../src/assets/images/StudentCommittee/shashi.jpeg"
-import avi from "../../src/assets/images/StudentCommittee/avinash.jpeg"
-import avim from "../../src/assets/images/StudentCommittee/avinashMaurya.jpg"
-import kobh from "../../src/assets/images/StudentCommittee/kopalbhartya.jpeg"
-import push from "../../src/assets/images/StudentCommittee/pushpakshukla.jpeg"
-import jyma from "../../src/assets/images/StudentCommittee/jyotimaurya.jpeg"
-import smsi from "../../src/assets/images/StudentCommittee/smritisingh.png"
-import aks from "../../src/assets/images/StudentCommittee/amitkumarsingh.jpeg"
-import shag from "../../src/assets/images/StudentCommittee/shivaniagarwal.jpeg"
-import hkg from "../../src/assets/images/StudentCommittee/HimanshuKumarGumlado.jpeg"
-import abku from "../../src/assets/images/StudentCommittee/abhishekkumar.jpg"
-import adsh from "../../src/assets/images/StudentCommittee/adarshshivhare.jpg"
-import paku from "../../src/assets/images/StudentCommittee/Pawanesh Kumar Vishwakarma.jpg"
-import sps from "../../src/assets/images/StudentCommittee/satyaPrakashSingh.jpeg"
-import ia from "../../src/assets/images/StudentCommittee/imtiyazAhmed.jpeg"
-import mk from "../../src/assets/images/StudentCommittee/manishaKumari.jpeg"
-import rp from "../../src/assets/images/StudentCommittee/RahulPrasad.jpeg"
-import rky from "../../src/assets/images/StudentCommittee/RahulKumarYadav.jpeg"
-import js from "../../src/assets/images/StudentCommittee/JavaSonker.png"
-import us from "../../src/assets/images/StudentCommittee/utkarshShukla.jpeg"
-import akr from "../../src/assets/images/StudentCommittee/Abhishek.png"
-import dy from "../../src/assets/images/StudentCommittee/digvijay.jpeg"
-import hp from "../assets/images/StudentCommittee/himanshuPandey.jpg"
-import sks from "../assets/images/StudentCommittee/sumanKumarsuman1.jpg"
-import vk from "../assets/images/StudentCommittee/VijayKumar.jpg"
-import ms from "../assets/images/StudentCommittee/MansiSrivastava.jpg"
-import rl from "../assets/images/StudentCommittee/RamniwasLodhi.jpg"
-import nk from "../assets/images/StudentCommittee/NavneetKishan.jpeg"
-import ak from "../assets/images/StudentCommittee/AnjaniKumar.jpg"
-import vcs from "../assets/images/StudentCommittee/Vikashchandra Sharma.jpg"
-import akk from "../assets/images/StudentCommittee/ajayKumarKushwaha.jpg"
+import hex from "../assets/images/StudentCommittee/sanyam.jpg"
+import coyote from "../assets/images/StudentCommittee/chinmay.jpg"
+import kr from "../assets/images/StudentCommittee/kiran_rathod.png"
+import am from "../assets/images/StudentCommittee/aman_mishra.jpg"
+import at from "../assets/images/StudentCommittee/anshi_tiwari.jpg"
+import sv from "../assets/images/StudentCommittee/shubh_vaish.jpg"
+import nm from "../assets/images/StudentCommittee/nayan_mishra.jpg"
 import React, {useEffect} from "react";
 
 const StudentCommittee = () => {
 
     const students = [{
         role: "Website Development Team", members: [{
-            name: "Jigyasu Saini",
-            linkedin: "https://www.linkedin.com/in/jigyasusaini/",
-            image: jig,
+            name: "Sanyam Goel",
+            linkedin: "https://www.linkedin.com/in/iamsanyamgoel/",
+            image: hex,
             tile: ["Application Club Lead"]
         }, {
-            name: "Shashi Rathee",
-            linkedin: "https://www.linkedin.com/in/shashi-rathee-282074217/",
-            image: sha,
-            tile: []
+            name: "Chinmay Borah",
+            linkedin: "https://www.linkedin.com/in/chinmay-borah2003/",
+            image: coyote,
+            tile: ["Application Club Lead"]
         }]
-    }, {
-        role: "Registration", members: [{
-            name: "Java Sonker", linkedin: "http://www.linkedin.com/in/java-sonker-756657128", image: js, tile: []
-        }, {
-            name: "Avinash Kumar",
-            linkedin: "https://www.linkedin.com/in/avinash-kumar-71785b130/",
-            image: avi,
-            tile: []
-        }, {
-            name: "Shivangi Agrawal",
-            linkedin: "https://www.linkedin.com/in/shivangi-agrawal-9a7354216/",
-            image: shag,
-            tile: []
-        }, {
-            name: "Jyoti Maurya", linkedin: "https://www.linkedin.com/in/jyoti-maurya-9305901ba/", image: jyma, tile: []
-        }]
-    }, {
+    }, 
+    // {
+    //     role: "Registration", members: [{
+    //         name: "Java Sonker", linkedin: "http://www.linkedin.com/in/java-sonker-756657128", image: js, tile: []
+    //     }, {
+    //         name: "Avinash Kumar",
+    //         linkedin: "https://www.linkedin.com/in/avinash-kumar-71785b130/",
+    //         image: avi,
+    //         tile: []
+    //     }, {
+    //         name: "Shivangi Agrawal",
+    //         linkedin: "https://www.linkedin.com/in/shivangi-agrawal-9a7354216/",
+    //         image: shag,
+    //         tile: []
+    //     }, {
+    //         name: "Jyoti Maurya", linkedin: "https://www.linkedin.com/in/jyoti-maurya-9305901ba/", image: jyma, tile: []
+    //     }]
+    // }, 
+    {
         role: "Design", members: [{
-            name: "Adarsh Shivhare",
-            linkedin: "https://www.linkedin.com/in/adarsh-shivhare-mnnit/",
-            image: adsh,
+            name: "Aman Mishra",
+            linkedin: "https://www.linkedin.com/in/amanmishra2003",
+            image: am,
             tile: []
         }, {
-            name: "Abhishek Kumar", linkedin: "https://www.linkedin.com/in/abhishekk018", image: abku, tile: []
+            name: "Anshi Tiwari", linkedin: "https://www.linkedin.com/in/anshi-tiwari", image: at, tile: []
         }, {
-            name: "Himanshu Kumar Gumladoo",
-            linkedin: "https://www.linkedin.com/in/himanshu-kumar-b52548322",
-            image: hkg,
+            name: "Nayan Mishra",
+            linkedin: "https://www.linkedin.com/in/nayan-mishra-9b4778250",
+            image: nm,
             tile: []
         }, {
-            name: "Rahul Prasad", linkedin: "https://www.linkedin.com/in/rahul-prasad-074170216/", image: rp, tile: []
+            name: "Shubh Vaish", linkedin: "https://www.linkedin.com/in/shubh-vaish-226493220", image: sv, tile: []
+        }, {
+            name: "Kiran Ravi Rathod", linkedin: "https://www.linkedin.com/in/kiran-rathod-1a3039320", image: kr, tile: []
         }]
-    }, {
-        role: "Hospitality", members: [{
-            name: "Ajay Kumar Kushwaha",
-            linkedin: "https://www.linkedin.com/in/ajay-kumar-kushwaha-953170210/",
-            image: akk,
-            tile: []
-        }, {
-            name: "Pawanesh Kumar Vishwakarma",
-            linkedin: "https://www.linkedin.com/in/pawanesh-in/",
-            image: paku,
-            tile: []
-        }, {
-            name: "Amit Kumar Singh",
-            linkedin: "https://www.linkedin.com/in/amit-kumar-singh-5421a053/",
-            image: aks,
-            tile: []
-        }, {
-            name: "Imtiyaz Ahmad", linkedin: "https://www.linkedin.com/in/imtiyaz-ahmad-75a93b1a8/", image: ia, tile: []
-        }, {
-            name: "Pushpak Shukla", linkedin: "https://www.linkedin.com/in/pushpakshukla/", image: push, tile: []
-        }, {
-            name: "Utkarsh Shukla", linkedin: "", image: us, tile: []
-        }, {
-            name: "Abhishek Kr Rao", linkedin: "", image: akr, tile: []
-        }]
-    }, {
-        role: "Session", members: [{
-            name: "Satya Prakash Singh",
-            linkedin: "http://www.linkedin.com/in/satya-prakash-singh-584b74177",
-            image: sps,
-            tile: []
-        }, {
-            name: "Digvijay Singh Yadav",
-            linkedin: "http://www.linkedin.com/in/digvijay-singh-yadav-1631012a8",
-            image: dy,
-            tile: []
-        }, {
-            name: "Himanshu Pandey",
-            linkedin: "http://www.linkedin.com/in/himanshu-pandey-023124103",
-            image: hp,
-            tile: []
-        }, {
-            name: "Suman Kumar Suman", linkedin: "", image: sks, tile: []
-        }, {
-            name: "Vijay Kumar", linkedin: "", image: vk, tile: []
-        }]
-    }, {
-        role: "Stage Committee", members: [{
-            name: "Smriti Singh", linkedin: "https://www.linkedin.com/in/smriti-singh-83895a170/", image: smsi, tile: []
-        }, {
-            name: "Manisha", linkedin: "https://www.linkedin.com/in/manisha-kumari-393921283/", image: mk, tile: []
-        }, {
-            name: "Rahul Kumar Yadav", linkedin: "https://www.linkedin.com/in/rahulrcs07/", image: rky, tile: []
-        }, {
-            name: "Mansi Srivastava", linkedin: "https://www.linkedin.com/in/dr-mansi-srivastava/", image: ms, tile: []
-        }]
-    }, {
-        role: "Certificate", members: [{
-            name: "Kopal Bhartiya", linkedin: "https://www.linkedin.com/in/kopal-bhartiya", image: kobh, tile: []
-        }, {
-            name: "Ramniwas Lodhi", linkedin: "", image: rl, tile: []
-        }]
-    }, {
-        role: "Food", members: [{
-            name: "Avinash Maurya", linkedin: "https://www.linkedin.com/in/avinash-maurya-aman/", image: avim, tile: []
-        }, {
-            name: "Navneet Kishan", linkedin: "https://www.linkedin.com/in/dr-navneet-kishan/", image: nk, tile: []
-        }, {
-            name: "Anjani Kumar", linkedin: "http://www.linkedin.com/in/anjani-kumar-10680b20", image: ak, tile: []
-        }]
-    }, {
-        role: "Technical", members: [{
-            name: "Vikash Chandra Sharma", linkedin: "", image: vcs, tile: []
-        }]
-    }]
+    }, 
+    // {
+    //     role: "Hospitality", members: [{
+    //         name: "Ajay Kumar Kushwaha",
+    //         linkedin: "https://www.linkedin.com/in/ajay-kumar-kushwaha-953170210/",
+    //         image: akk,
+    //         tile: []
+    //     }, {
+    //         name: "Pawanesh Kumar Vishwakarma",
+    //         linkedin: "https://www.linkedin.com/in/pawanesh-in/",
+    //         image: paku,
+    //         tile: []
+    //     }, {
+    //         name: "Amit Kumar Singh",
+    //         linkedin: "https://www.linkedin.com/in/amit-kumar-singh-5421a053/",
+    //         image: aks,
+    //         tile: []
+    //     }, {
+    //         name: "Imtiyaz Ahmad", linkedin: "https://www.linkedin.com/in/imtiyaz-ahmad-75a93b1a8/", image: ia, tile: []
+    //     }, {
+    //         name: "Pushpak Shukla", linkedin: "https://www.linkedin.com/in/pushpakshukla/", image: push, tile: []
+    //     }, {
+    //         name: "Utkarsh Shukla", linkedin: "", image: us, tile: []
+    //     }, {
+    //         name: "Abhishek Kr Rao", linkedin: "", image: akr, tile: []
+    //     }]
+    // },
+    // {
+    //     role: "Session", members: [{
+    //         name: "Satya Prakash Singh",
+    //         linkedin: "http://www.linkedin.com/in/satya-prakash-singh-584b74177",
+    //         image: sps,
+    //         tile: []
+    //     }, {
+    //         name: "Digvijay Singh Yadav",
+    //         linkedin: "http://www.linkedin.com/in/digvijay-singh-yadav-1631012a8",
+    //         image: dy,
+    //         tile: []
+    //     }, {
+    //         name: "Himanshu Pandey",
+    //         linkedin: "http://www.linkedin.com/in/himanshu-pandey-023124103",
+    //         image: hp,
+    //         tile: []
+    //     }, {
+    //         name: "Suman Kumar Suman", linkedin: "", image: sks, tile: []
+    //     }, {
+    //         name: "Vijay Kumar", linkedin: "", image: vk, tile: []
+    //     }]
+    // }, {
+    //     role: "Stage Committee", members: [{
+    //         name: "Smriti Singh", linkedin: "https://www.linkedin.com/in/smriti-singh-83895a170/", image: smsi, tile: []
+    //     }, {
+    //         name: "Manisha", linkedin: "https://www.linkedin.com/in/manisha-kumari-393921283/", image: mk, tile: []
+    //     }, {
+    //         name: "Rahul Kumar Yadav", linkedin: "https://www.linkedin.com/in/rahulrcs07/", image: rky, tile: []
+    //     }, {
+    //         name: "Mansi Srivastava", linkedin: "https://www.linkedin.com/in/dr-mansi-srivastava/", image: ms, tile: []
+    //     }]
+    // }, {
+    //     role: "Certificate", members: [{
+    //         name: "Kopal Bhartiya", linkedin: "https://www.linkedin.com/in/kopal-bhartiya", image: kobh, tile: []
+    //     }, {
+    //         name: "Ramniwas Lodhi", linkedin: "", image: rl, tile: []
+    //     }]
+    // }, {
+    //     role: "Food", members: [{
+    //         name: "Avinash Maurya", linkedin: "https://www.linkedin.com/in/avinash-maurya-aman/", image: avim, tile: []
+    //     }, {
+    //         name: "Navneet Kishan", linkedin: "https://www.linkedin.com/in/dr-navneet-kishan/", image: nk, tile: []
+    //     }, {
+    //         name: "Anjani Kumar", linkedin: "http://www.linkedin.com/in/anjani-kumar-10680b20", image: ak, tile: []
+    //     }]
+    // }, {
+    //     role: "Technical", members: [{
+    //         name: "Vikash Chandra Sharma", linkedin: "", image: vcs, tile: []
+    //     }]
+    // }
+]
 
 
     // Function to log all student names
