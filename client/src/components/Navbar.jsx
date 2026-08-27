@@ -44,7 +44,7 @@ const Navbar = () => {
         {
           name: "Technical Program Committee",
           link: "advisoryCommittee#Technical%20Program%20Committee",
-        }, // {name: "Student Committee", link: "studentCommittee"}
+        }, {name: "Student Committee", link: "studentCommittee"}
       ],
     },
     //     {
