@@ -90,53 +90,169 @@ const AccomodationPage = () => {
         },]
     },];
 
+    const delegateTariff = [{
+        roomType: "DELUXE SINGLE",
+        publishedTariff: "12000",
+        specialTariff: "5000",
+    }, {
+        roomType: "DELUXE DOUBLE",
+        publishedTariff: "14000",
+        specialTariff: "6000",
+    }, {
+        roomType: "ROYAL CLUB SINGLE",
+        publishedTariff: "16000",
+        specialTariff: "6000",
+    }, {
+        roomType: "ROYAL CLUB DOUBLE",
+        publishedTariff: "18000",
+        specialTariff: "7000",
+    }, {
+        roomType: "CHAMBER SINGLE/DOUBLE",
+        publishedTariff: "25000",
+        specialTariff: "8000",
+    }, {
+        roomType: "JUNIOR SUITE (SINGLE/DOUBLE)",
+        publishedTariff: "30000",
+        specialTariff: "10000",
+    }, {
+        roomType: "SUITE (SINGLE/DOUBLE)",
+        publishedTariff: "35000",
+        specialTariff: "20000",
+    }, {
+        roomType: "EXTRA PERSON",
+        publishedTariff: "3000",
+        specialTariff: "1500",
+    },];
+
     return <section
         id="Accomodation"
         className="flex-col rounded-md shadow-sm text-base-content flex items-center py-4 w-full">
-        <h2 className="mb-8 text-4xl font-playfair font-bold text-primary text-center">List of Hotels</h2>
-        <div className="px-4 w-full max-w-7xl mx-auto">
-            <div className="overflow-x-auto">
-                <table className="table-auto w-full border-collapse mb-8">
-                    <thead>
-                    <tr className="bg-gray-200 ">
-                        <th className="border border-gray-300 px-4 py-2">S. No.</th>
-                        <th className="border border-gray-300 px-4 py-2">Hotel Name</th>
-                        <th className="border border-gray-300 px-4 py-2">Category</th>
-                        <th className="border border-gray-300 px-4 py-2">Distance from MNNIT</th>
-                        <th className="border border-gray-300 px-4 py-2">Price Per Night (Single Bed)</th>
-                        <th className="border border-gray-300 px-4 py-2">Price Per Night (Double Bed)</th>
-                        <th className="border border-gray-300 px-4 py-2">Contact No.</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {hotels.map((hotel,hotelIndex) => (hotel.rooms.map((room, roomIndex) => (
-                            <tr key={`${hotelIndex}-${roomIndex}`} className="hover:bg-gray-100">
-                                {roomIndex === 0 && (<>
-                                        <td className="border border-gray-300 px-4 py-2" rowSpan={hotel.rooms.length}>
-                                            {hotelIndex+1}
-                                        </td>
-                                        <td className="border border-gray-300 px-4 py-2" rowSpan={hotel.rooms.length}>
-                                            {hotel.name}
-                                        </td>
-                                    </>)}
-                                <td className="border border-gray-300 px-4 py-2">{room.category}</td>
-                                {roomIndex === 0 && (
-                                    <td className="border border-gray-300 px-4 py-2" rowSpan={hotel.rooms.length}>
-                                        {hotel.distance}
-                                    </td>)}
-                                <td className="border border-gray-300 px-4 py-2">{room.singleBed}</td>
-                                <td className="border border-gray-300 px-4 py-2">{room.doubleBed}</td>
-                                {roomIndex === 0 && (
-                                    <td className="border text-nowrap border-gray-300 px-4 py-2" rowSpan={hotel.rooms.length}>
-                                        {hotel.contact}
-                                    </td>)}
-                            </tr>))))}
-                    </tbody>
-                </table>
+        <div className="w-full max-w-7xl mx-auto px-4 space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-xl font-bold text-primary">
+                            H
+                        </div>
+                        <h3 className="text-2xl font-bold text-primary">Official Hospitality Partner</h3>
+                    </div>
+                    <p className="text-base text-gray-700 leading-relaxed">
+                        We are pleased to announce <span className="font-semibold text-primary">Hotel Kanha Shyam, Prayagraj </span>
+                         as the official hospitality partner and accommodation sponsor for NGNDAI-2026.
+                    </p>
+                    <p className="mt-4 text-base text-gray-700 leading-relaxed">
+                        Located strategically in Civil Lines, Hotel Kanha Shyam is offering exclusive discounted room tariffs
+                        and premium services for all registered national and international conference delegates.
+                    </p>
+
+                    <div className="mt-6">
+                        <h4 className="text-xl font-semibold mb-2">Location &amp; Connectivity</h4>
+                        <ul className="list-disc pl-5 text-gray-700 text-base leading-relaxed">
+                            <li className="mb-1">Address: 22/1, Strachey Road, Civil Lines, Prayagraj, Uttar Pradesh.</li>
+                            <li className="mb-1">Proximity: Convenient travel distance to the conference venue at <span className="font-semibold">MNNIT Allahabad</span> and just 1.2 km from the center of Prayagraj.</li>
+                        </ul>
+                    </div>
+
+                    <div className="mt-6">
+                        <h4 className="text-xl font-semibold mb-2">How to Book Your Room</h4>
+                        <p className="text-base text-gray-700 mb-2">To secure the conference-special pricing, please book directly using the contact avenues below:</p>
+                        <ul className="list-disc pl-5 text-gray-700 text-base leading-relaxed">
+                            <li className="mb-1">Official Website Portal: <a href="http://www.hotelkanhashyam.com" target="_blank" rel="noreferrer" className="text-primary font-semibold">Hotel Kanha Shyam Booking Portal</a></li>
+                            <li className="mb-1">Reservation Helpline: Connect directly via <span className="font-semibold">+91-9897609116</span></li>
+                            <li className="mb-1">Email Reference: Please send your reservation query along with your approved conference registration slip to their helpdesk.</li>
+                            <li className="mb-1">Official booking emails: <a href="mailto:info@hotelkanhashyam.com" className="text-primary">info@hotelkanhashyam.com</a>, <a href="mailto:sales@hotelkanhashyam.com" className="text-primary">sales@hotelkanhashyam.com</a></li>
+                        </ul>
+
+                        <p className="mt-3 text-base text-gray-600">Please note the bookings should come in writing from official mail id either on <a href="mailto:info@hotelkanhashyam.com" className="text-primary">info@hotelkanhashyam.com</a>, or <a href="mailto:sales@hotelkanhashyam.com" className="text-primary">sales@hotelkanhashyam.com</a>.</p>
+
+                        <p className="mt-2 text-base text-gray-600 font-medium">Please note that the above rates shall not be applicable for a block of more than 3 rooms on a single day in case booked in one name.</p>
+                    </div>
+                </div>
+
+                <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-6">
+                    <h3 className="text-2xl font-bold text-primary mb-4">Special Delegate Perks</h3>
+                    <div className="overflow-x-auto">
+                        <table className="min-w-full border-collapse border border-gray-300 text-sm md:text-base">
+                            <thead>
+                            <tr className="bg-gray-200">
+                                <th className="border border-gray-300 px-3 py-3 text-left">Room Type</th>
+                                <th className="border border-gray-300 px-3 py-3 text-left">Published Tariff</th>
+                                <th className="border border-gray-300 px-3 py-3 text-left">Special Tariff</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {delegateTariff.map((item) => (
+                                <tr key={item.roomType} className="align-top hover:bg-gray-50">
+                                    <td className="border border-gray-300 px-3 py-3 font-medium text-gray-800">{item.roomType}</td>
+                                    <td className="border border-gray-300 px-3 py-3 text-gray-700">{item.publishedTariff}</td>
+                                    <td className="border border-gray-300 px-3 py-3 text-gray-700">{item.specialTariff}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                    <p className="mt-4 text-xs font-medium text-gray-600">(Per room per night) (Exclusive of GST)</p>
+
+                    <div className="mt-4 text-sm text-gray-700">
+                        <h4 className="font-semibold mb-2">The above rates include:-</h4>
+                        <ul className="list-disc pl-5 space-y-2">
+                            <li>Tea / Coffee makers in the room with service packs provided on a complimentary basis.</li>
+                            <li>Shaving Kit, Dental kit (on request) with bathroom slippers.</li>
+                            <li>All the rooms have LCD Televisions with major satellite channels and individual electronic safes.</li>
+                            <li>Buffet/Fixed menu Breakfast from 0700 to 1030 Hrs. on daily basis in our Coffee Shop, The Patio.</li>
+                            <li>Complimentary usage of our Fitness Centre with state of the art equipment, exclusive Yoga room and steam bath section.</li>
+                            <li>Complimentary usage of Wi-Fi on Hotel’s network for up to 2 devices.</li>
+                            <li>2 liters of packaged drinking water replenished on daily basis.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div className="text-sm text-gray-600 mt-4 mb-8">
-                <p>Note: Prices are subject to change. Please contact hotels directly for the most current rates and
-                    availability.</p>
+
+            <h2 className="text-4xl font-playfair font-bold text-primary text-center">List of Hotels</h2>
+            <div className="px-0 w-full">
+                <div className="overflow-x-auto">
+                    <table className="table-auto w-full border-collapse mb-8">
+                        <thead>
+                        <tr className="bg-gray-200 ">
+                            <th className="border border-gray-300 px-4 py-2">S. No.</th>
+                            <th className="border border-gray-300 px-4 py-2">Hotel Name</th>
+                            <th className="border border-gray-300 px-4 py-2">Category</th>
+                            <th className="border border-gray-300 px-4 py-2">Distance from MNNIT</th>
+                            <th className="border border-gray-300 px-4 py-2">Price Per Night (Single Bed)</th>
+                            <th className="border border-gray-300 px-4 py-2">Price Per Night (Double Bed)</th>
+                            <th className="border border-gray-300 px-4 py-2">Contact No.</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {hotels.map((hotel,hotelIndex) => (hotel.rooms.map((room, roomIndex) => (
+                                <tr key={`${hotelIndex}-${roomIndex}`} className="hover:bg-gray-100">
+                                    {roomIndex === 0 && (<>
+                                            <td className="border border-gray-300 px-4 py-2" rowSpan={hotel.rooms.length}>
+                                                {hotelIndex+1}
+                                            </td>
+                                            <td className="border border-gray-300 px-4 py-2" rowSpan={hotel.rooms.length}>
+                                                {hotel.name}
+                                            </td>
+                                        </>)}
+                                    <td className="border border-gray-300 px-4 py-2">{room.category}</td>
+                                    {roomIndex === 0 && (
+                                        <td className="border border-gray-300 px-4 py-2" rowSpan={hotel.rooms.length}>
+                                            {hotel.distance}
+                                        </td>)}
+                                    <td className="border border-gray-300 px-4 py-2">{room.singleBed}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{room.doubleBed}</td>
+                                    {roomIndex === 0 && (
+                                        <td className="border text-nowrap border-gray-300 px-4 py-2" rowSpan={hotel.rooms.length}>
+                                            {hotel.contact}
+                                        </td>)}
+                                </tr>))))}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="text-sm text-gray-600 mt-4 mb-8">
+                    <p>Note: Prices are subject to change. Please contact hotels directly for the most current rates and
+                        availability.</p>
+                </div>
             </div>
         </div>
     </section>
