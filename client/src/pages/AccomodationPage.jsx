@@ -156,6 +156,9 @@ const AccomodationPage = () => {
                     <div className="mt-6">
                         <h4 className="text-xl font-semibold mb-2">How to Book Your Room</h4>
                         <p className="text-base text-gray-700 mb-2">To secure the conference-special pricing, please book directly using the contact avenues below:</p>
+                        <p className="mt-2 text-base text-gray-700">
+                            Use booking code <span className="font-mono font-bold underline decoration-2 underline-offset-2 bg-gray-100 px-1.5 py-0.5 rounded text-primary">NGNDAI2026</span> to avail the discounted rate.
+                        </p>
                         <ul className="list-disc pl-5 text-gray-700 text-base leading-relaxed">
                             <li className="mb-1">Official Website Portal: <a href="http://www.hotelkanhashyam.com" target="_blank" rel="noreferrer" className="text-primary font-semibold">Hotel Kanha Shyam Booking Portal</a></li>
                             <li className="mb-1">Reservation Helpline: Connect directly via <span className="font-semibold">+91-9897609116</span></li>
