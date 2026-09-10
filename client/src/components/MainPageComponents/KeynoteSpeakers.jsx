@@ -37,13 +37,7 @@ function KeynoteSpeakers() {
         image: ajk,
         about: "ERS, HCL Tech",
         homepage: "https://www.linkedin.com/in/ajay-k-sharma/"
-    }, 
-    {
-        name: "Mr. Ashok Kumar",
-        image: ak,
-        about: "Deputy Director General, Department of Telecommunications",
-        homepage: "https://www.linkedin.com/in/ashok100/"
-    }, 
+    },  
     {
         name: "Prof. Ashutosh Kumar Singh",
         image: aks,
