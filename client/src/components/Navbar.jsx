@@ -78,9 +78,9 @@ const Navbar = () => {
         //     name: "Mentorship Session", link: "/MentorshipSession"
         // }, 
         {name: "Accomodation", link: "accomodationPage"}, 
-        // {
-            // name: "Cultural Program", link: "culturalProgramPage"
-        // }
+        {
+            name: "Cultural Program", link: "culturalProgramPage"
+        }
       ]
     },
     {
