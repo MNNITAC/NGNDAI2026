@@ -40,7 +40,7 @@ function OrganisingCommittee() {
 
     const organisingCommittee = [{
         members: [{
-            name: "Prof. Umamaheshwar Rao Karanam",
+            name: "Prof. K. Umamaheshwar Rao",
             image: rsv,
             about: <><u>Director</u>, MNNIT Allahabad, India</>,
             role: "Chief Patron",

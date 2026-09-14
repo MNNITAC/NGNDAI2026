@@ -5,7 +5,12 @@ import {AnimatePresence, motion} from "framer-motion";
 
 function Dropdown({el, prevPath, noUnderline, highlight}) {
     const [isOpen, setIsOpen] = useState(false);
-    const [isScrollInBounds, setIsScrollInBounds] = useState(true);
+    const [isScrollInBounds, setIsScrollInBounds] = useState(() => {
+        const scrollY = window.scrollY;
+        const scrollLowerLimit = el.scrollLowerLimit || 0;
+        const scrollUpperLimit = el.scrollUpperLimit || Infinity;
+        return scrollY >= scrollLowerLimit && scrollY <= scrollUpperLimit;
+    });
     const location = useLocation();  // Get current URL path
 
     // Check if scrollLowerLimit and scrollUpperLimit exist, and handle scroll events
