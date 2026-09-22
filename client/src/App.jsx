@@ -16,6 +16,7 @@ import StudentCommittee from "./pages/StudentCommittee.jsx";
 import AccomodationPage from "./pages/AccomodationPage.jsx";
 import CulturalProgramPage from "./pages/CulturalEvent.jsx";
 import DownloadSchedulePage from "./pages/DownloadSchedulePage.jsx";
+import ConferenceSchedulePage from "./pages/ConferenceSchedulePage.jsx";
 import MentorshipSessionPage from "./pages/MentorshipSession.jsx";
 import ConferenceImagesPage from "./pages/conferenceImages.jsx";
 import SummaryRoot from "./pages/SummaryRoot.jsx";
@@ -69,6 +70,9 @@ function App() {
                             }, {
                                 path: "downloadSchedule",
                                 element: <DownloadSchedulePage/>
+                            }, {
+                                path: "conferenceSchedule",
+                                element: <ConferenceSchedulePage/>
                             }, {
                                 path: "MentorshipSession",
                                 element: <MentorshipSessionPage/>

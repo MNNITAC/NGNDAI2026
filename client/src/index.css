@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes schedule-button-border {
+    0%, 100% {
+        border-color: #dc2626;
+    }
+
+    50% {
+        border-color: #ffffff;
+    }
+}
+
+.schedule-button-blink {
+    animation: schedule-button-border 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .schedule-button-blink {
+        animation: none;
+        border-color: #ffffff;
+    }
+}
+
 @layer utilities {
     .custom-scrollbar {
         scrollbar-width: thin; /* For Firefox */

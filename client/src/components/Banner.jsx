@@ -2,6 +2,8 @@ import React from "react";
 import Carousal from "./Miscellaneous/Carousal.jsx";
 
 import cfp from "../assets/documents/NGNDAI-2026-CFP-Round-II.pdf";
+import conferenceSchedule from "../assets/documents/NGNDAI-2026 Schedule.pdf";
+import detailedSchedule from "../assets/documents/detailed_schedule.pdf";
 import { useNavigate } from "react-router-dom";
 
 
@@ -56,10 +58,32 @@ function Banner() {
             </div>
           </div>
 
-        <div className="mt-6 flex flex-wrap gap-6 justify-center">
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
+          <a
+            href={conferenceSchedule}
+            target="_blank"
+            rel="noreferrer"
+            className="schedule-button-blink inline-flex items-center justify-center rounded-full border-2 border-red-600 bg-red-600 px-6 py-2 text-lg font-semibold text-white shadow-md ring-2 ring-white transition-colors duration-200 ease-in-out hover:bg-red-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-600/40"
+            aria-label="Conference schedule"
+          >
+            Conference schedule
+          </a>
+
+          <a
+            href={detailedSchedule}
+            target="_blank"
+            rel="noreferrer"
+            className="schedule-button-blink inline-flex items-center justify-center rounded-full border-2 border-red-600 bg-red-600 px-6 py-2 text-lg font-semibold text-white shadow-md ring-2 ring-white transition-colors duration-200 ease-in-out hover:bg-red-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-600/40"
+            aria-label="Detailed conference schedule"
+          >
+            Detailed conference schedule
+          </a>
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-6 justify-center">
           <div
             onClick={() => window.open(cfp, "_blank")}
-            className="inline-flex items-center justify-center px-6 py-2 text-lg rounded-full border-[3px] border-red-600 bg-white text-black hover:bg-transparent hover:text-white hover:border-white transition-colors duration-200 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-600/40 font-semibold cursor-pointer"
+            className="inline-flex cursor-pointer items-center justify-center rounded-full border-[3px] border-red-600 bg-white px-6 py-2 text-lg font-semibold text-black shadow-md transition-colors duration-200 ease-in-out hover:bg-transparent hover:text-white hover:border-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-600/40"
             aria-label="Call for Papers"
           >
             Call for Papers
@@ -73,6 +97,7 @@ function Banner() {
           >
             Paper Submission Guidelines
           </div>
+
         </div>
       </div>
     </div>
