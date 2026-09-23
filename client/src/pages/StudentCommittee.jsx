@@ -5,7 +5,46 @@ import am from "../assets/images/StudentCommittee/aman_mishra.jpg"
 import at from "../assets/images/StudentCommittee/anshi_tiwari.jpg"
 import sv from "../assets/images/StudentCommittee/shubh_vaish.jpg"
 import nm from "../assets/images/StudentCommittee/nayan_mishra.jpg"
+import arpitDubey from "../assets/images/StudentCommittee/arpit_dubey.jpeg"
+import akankshaSingh from "../assets/images/StudentCommittee/akanksha_singh.jpg"
+import ravikantDiwakar from "../assets/images/StudentCommittee/ravikant_diwakar.png"
+import yashasviJaiswal from "../assets/images/StudentCommittee/yashasvi_jaiswal.jpg"
+import preetiGupta from "../assets/images/StudentCommittee/preeti_gupta.jpg"
+import shubhshreeAishwarya from "../assets/images/StudentCommittee/shubhshree_aishwarya.jpeg"
+import pawaneshVishwakarma from "../assets/images/StudentCommittee/pawanesh_vishwakarma.jpg"
+import mRenubabuNaik from "../assets/images/StudentCommittee/m_renubabu_naik.png"
+import swapnil from "../assets/images/StudentCommittee/swapnil.jpg"
+import anandKumarPrajapati from "../assets/images/StudentCommittee/anand_kumar_prajapati.png"
+import akhilDevMishra from "../assets/images/StudentCommittee/akhil_dev_mishra.jpg"
+import ashishKumar from "../assets/images/StudentCommittee/ashish_kumar.jpg"
+import ajayKumarKushwaha from "../assets/images/StudentCommittee/ajay_kumar_kushwaha.jpg"
+import pushpendraBais from "../assets/images/StudentCommittee/pushpendra_bais.jpg"
+import ranjeetKumar from "../assets/images/StudentCommittee/ranjeet_kumar.png"
+import shashankSrivastava from "../assets/images/StudentCommittee/shashank_srivastava.jpeg"
+import kusumlata from "../assets/images/StudentCommittee/kusumlata.jpg"
+import sweta from "../assets/images/StudentCommittee/sweta.jpg"
+import jyotiMaurya from "../assets/images/StudentCommittee/jyoti_maurya.png"
+import smritiSingh from "../assets/images/StudentCommittee/smriti_singh.jpg"
+import shivangiAgrawal from "../assets/images/StudentCommittee/shivangi_agrawal.jpg"
+import yogeshKanwar from "../assets/images/StudentCommittee/yogesh_kanwar.jpg"
+import utkarshVerma from "../assets/images/StudentCommittee/utkarsh_verma.jpg"
+import jatinSharma from "../assets/images/StudentCommittee/jatin_sharma.jpg"
+import sunilBansiwal from "../assets/images/StudentCommittee/sunil_bansiwal.png"
+import avin from "../assets/images/StudentCommittee/avinash.png"
 import React, {useEffect} from "react";
+
+// Simple grey placeholder avatar (inline SVG data URI) used for members
+// whose photo hasn't been added yet. Swap `image: placeholder` for a real
+// imported photo once one is available.
+const placeholder =
+    "data:image/svg+xml;utf8," +
+    encodeURIComponent(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">' +
+        '<rect width="100" height="100" fill="#e5e7eb"/>' +
+        '<circle cx="50" cy="38" r="18" fill="#9ca3af"/>' +
+        '<ellipse cx="50" cy="86" rx="32" ry="24" fill="#9ca3af"/>' +
+        '</svg>'
+    );
 
 const StudentCommittee = () => {
 
@@ -40,7 +79,7 @@ const StudentCommittee = () => {
     //     }]
     // }, 
     {
-        role: "Design", members: [{
+        role: "Design Team", members: [{
             name: "Aman Mishra",
             linkedin: "https://www.linkedin.com/in/amanmishra2003",
             image: am,
@@ -57,7 +96,87 @@ const StudentCommittee = () => {
         }, {
             name: "Kiran Ravi Rathod", linkedin: "https://www.linkedin.com/in/kiran-rathod-1a3039320", image: kr, tile: []
         }]
-    }, 
+    },
+    {
+        role: "Registration", members: [{
+            name: "Arpit Dubey", linkedin: "", image: arpitDubey, tile: []
+        }, {
+            name: "Akanksha Singh", linkedin: "", image: akankshaSingh, tile: []
+        }, {
+            name: "Ravikant Diwakar", linkedin: "", image: ravikantDiwakar, tile: []
+        }, {
+            name: "Yashasvi Jaiswal", linkedin: "", image: yashasviJaiswal, tile: []
+        }, {
+            name: "Preeti Gupta", linkedin: "", image: preetiGupta, tile: []
+        }]
+    },
+    {
+        role: "Food Management", members: [{
+            name: "Shubhshree Aishwarya", linkedin: "", image: shubhshreeAishwarya, tile: []
+        }, {
+            name: "Pawanesh Vishwakarma", linkedin: "", image: pawaneshVishwakarma, tile: []
+        }, {
+            name: "M. Renubabu Naik", linkedin: "", image: mRenubabuNaik, tile: []
+        }, {
+            name: "Swapnil", linkedin: "", image: swapnil, tile: []
+        }, {
+            name: "Aman Mishra", linkedin: "", image: am, tile: []
+        }, {
+            name: "Anand Kumar Prajapati", linkedin: "", image: anandKumarPrajapati, tile: []
+        }]
+    },
+    {
+        role: "Hospitality", members: [{
+            name: "Akhil Dev Mishra", linkedin: "", image: akhilDevMishra, tile: []
+        }, {
+            name: "Ashish Kumar", linkedin: "", image: ashishKumar, tile: []
+        }, {
+            name: "Chinmay Borah", linkedin: "", image: coyote, tile: []
+        }, {
+            name: "Ajay Kumar Kushwaha", linkedin: "", image: ajayKumarKushwaha, tile: []
+        }, {
+            name: "Aditya", linkedin: "", image: placeholder, tile: []
+        }]
+    },
+    {
+        role: "Session Management", members: [{
+            name: "Pushpendra Kumar Bais", linkedin: "", image: pushpendraBais, tile: []
+        }, {
+            name: "Ranjeet Kumar", linkedin: "", image: ranjeetKumar, tile: []
+        }, {
+            name: "Shashank Srivastava", linkedin: "", image: shashankSrivastava, tile: []
+        }, {
+            name: "Kusumlata", linkedin: "", image: kusumlata, tile: []
+        }, {
+            name: "Nayan Mishra", linkedin: "", image: nm, tile: []
+        }, {
+            name: "Avinash Kumar", linkedin: "", image: avin, tile: []
+        }]
+    },
+    {
+        role: "Stage Committee", members: [{
+            name: "Sweta", linkedin: "", image: sweta, tile: []
+        }, {
+            name: "Jyoti Maurya", linkedin: "", image: jyotiMaurya, tile: []
+        }, {
+            name: "Smriti Singh", linkedin: "", image: smritiSingh, tile: []
+        }, {
+            name: "Shivangi Agrawal", linkedin: "", image: shivangiAgrawal, tile: []
+        }]
+    },
+    {
+        role: "Technical Support", members: [{
+            name: "Yogesh Kanwar", linkedin: "", image: yogeshKanwar, tile: []
+        }, {
+            name: "Utkarsh Verma", linkedin: "", image: utkarshVerma, tile: []
+        }, {
+            name: "Shubh Vaish", linkedin: "", image: sv, tile: []
+        }, {
+            name: "Jatin Sharma", linkedin: "", image: jatinSharma, tile: []
+        }, {
+            name: "Sunil Bansiwal", linkedin: "", image: sunilBansiwal, tile: []
+        }]
+    },
     // {
     //     role: "Hospitality", members: [{
     //         name: "Ajay Kumar Kushwaha",
@@ -193,18 +312,20 @@ const StudentCommittee = () => {
                                         {role}
                                     </div>))}
                                 </div>
-                                <a
-                                    href={member.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center text-primary hover:text-primary-focus text-sm mt-2"
-                                >
-                                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                    </svg>
-                                    LinkedIn
-                                </a>
+                                {member.linkedin && (
+                                    <a
+                                        href={member.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center text-primary hover:text-primary-focus text-sm mt-2"
+                                    >
+                                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path
+                                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                        </svg>
+                                        LinkedIn
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>))}
