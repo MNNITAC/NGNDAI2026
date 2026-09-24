@@ -31,6 +31,8 @@ import utkarshVerma from "../assets/images/StudentCommittee/utkarsh_verma.jpg"
 import jatinSharma from "../assets/images/StudentCommittee/jatin_sharma.jpg"
 import sunilBansiwal from "../assets/images/StudentCommittee/sunil_bansiwal.png"
 import avin from "../assets/images/StudentCommittee/avinash.png"
+import deepdwi from "../assets/images/StudentCommittee/deepdwi.jpeg"
+import aksmi from "../assets/images/StudentCommittee/aksmi.jpeg"
 import React, {useEffect} from "react";
 
 // Simple grey placeholder avatar (inline SVG data URI) used for members
@@ -149,9 +151,17 @@ const StudentCommittee = () => {
             name: "Kusumlata", linkedin: "", image: kusumlata, tile: []
         }, {
             name: "Nayan Mishra", linkedin: "", image: nm, tile: []
-        }, {
+        }, 
+        {
             name: "Avinash Kumar", linkedin: "", image: avin, tile: []
-        }]
+        },
+        {
+            name: "Akshat Mishra", linkedin: "", image: aksmi, tile: []
+        },
+        {
+            name: "Deepak Dwivedi", linkedin: "", image: deepdwi, tile: []
+        },
+    ]
     },
     {
         role: "Stage Committee", members: [{
